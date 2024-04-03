@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22294AD37189CAF07C0B5039 /* Pods_CollectiMon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E595B83F1F852079E6D34C3 /* Pods_CollectiMon.framework */; };
+		C01953702BB7611E0044190C /* Generations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C019536F2BB7611E0044190C /* Generations.swift */; };
+		C06825E52BB86EF7004971BB /* StringsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06825E42BB86EF7004971BB /* StringsExtensions.swift */; };
+		C081BAA22BB8073600719246 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = C081BAA12BB8073600719246 /* Types.swift */; };
+		C0D31C1E2BB5DDB10016A1BE /* CardDexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C1D2BB5DDB10016A1BE /* CardDexApp.swift */; };
+		C0D31C202BB5DDB10016A1BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C1F2BB5DDB10016A1BE /* ContentView.swift */; };
+		C0D31C222BB5DDB20016A1BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D31C212BB5DDB20016A1BE /* Assets.xcassets */; };
+		C0D31C252BB5DDB20016A1BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D31C242BB5DDB20016A1BE /* Preview Assets.xcassets */; };
+		C0D31C272BB5DDB20016A1BE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C262BB5DDB20016A1BE /* Persistence.swift */; };
+		C0D31C2A2BB5DDB20016A1BE /* CardDex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C282BB5DDB20016A1BE /* CardDex.xcdatamodeld */; };
+		C0D31C362BB5DEDF0016A1BE /* DexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C352BB5DEDF0016A1BE /* DexView.swift */; };
+		C0D31C392BB5E1760016A1BE /* RegionPokemonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C382BB5E1760016A1BE /* RegionPokemonsView.swift */; };
+		C0D31C3B2BB5E22A0016A1BE /* RegionPokemonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C3A2BB5E22A0016A1BE /* RegionPokemonsViewModel.swift */; };
+		C0D31C3D2BB5E5540016A1BE /* PokMiniatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C3C2BB5E5540016A1BE /* PokMiniatureView.swift */; };
+		C0D31C412BB5E87D0016A1BE /* PokemonInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C402BB5E87D0016A1BE /* PokemonInfoModel.swift */; };
+		C0D31C442BB5F70C0016A1BE /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C432BB5F70C0016A1BE /* ApiManager.swift */; };
+		C0D31C492BB5FA0D0016A1BE /* PokemonBasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C482BB5FA0D0016A1BE /* PokemonBasicInfo.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0E595B83F1F852079E6D34C3 /* Pods_CollectiMon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CollectiMon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FF35C63D983C3F99A02A0C0 /* Pods-CollectiMon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectiMon.debug.xcconfig"; path = "Target Support Files/Pods-CollectiMon/Pods-CollectiMon.debug.xcconfig"; sourceTree = "<group>"; };
+		B462522EB48F897C869090EB /* Pods-CollectiMon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectiMon.release.xcconfig"; path = "Target Support Files/Pods-CollectiMon/Pods-CollectiMon.release.xcconfig"; sourceTree = "<group>"; };
+		C019536F2BB7611E0044190C /* Generations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generations.swift; sourceTree = "<group>"; };
+		C06825E42BB86EF7004971BB /* StringsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsExtensions.swift; sourceTree = "<group>"; };
+		C081BAA12BB8073600719246 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		C0D31C1A2BB5DDB10016A1BE /* CollectiMon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectiMon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0D31C1D2BB5DDB10016A1BE /* CardDexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDexApp.swift; sourceTree = "<group>"; };
+		C0D31C1F2BB5DDB10016A1BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C0D31C212BB5DDB20016A1BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C0D31C242BB5DDB20016A1BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C0D31C262BB5DDB20016A1BE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		C0D31C292BB5DDB20016A1BE /* CardDex.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardDex.xcdatamodel; sourceTree = "<group>"; };
+		C0D31C352BB5DEDF0016A1BE /* DexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DexView.swift; sourceTree = "<group>"; };
+		C0D31C382BB5E1760016A1BE /* RegionPokemonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionPokemonsView.swift; sourceTree = "<group>"; };
+		C0D31C3A2BB5E22A0016A1BE /* RegionPokemonsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionPokemonsViewModel.swift; sourceTree = "<group>"; };
+		C0D31C3C2BB5E5540016A1BE /* PokMiniatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokMiniatureView.swift; sourceTree = "<group>"; };
+		C0D31C402BB5E87D0016A1BE /* PokemonInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonInfoModel.swift; sourceTree = "<group>"; };
+		C0D31C432BB5F70C0016A1BE /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		C0D31C482BB5FA0D0016A1BE /* PokemonBasicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonBasicInfo.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C0D31C172BB5DDB10016A1BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22294AD37189CAF07C0B5039 /* Pods_CollectiMon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1ADB9AB16F7143E39D30CE71 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6FF35C63D983C3F99A02A0C0 /* Pods-CollectiMon.debug.xcconfig */,
+				B462522EB48F897C869090EB /* Pods-CollectiMon.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C081BAA02BB8072600719246 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				C019536F2BB7611E0044190C /* Generations.swift */,
+				C081BAA12BB8073600719246 /* Types.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		C0D31C112BB5DDB10016A1BE = {
+			isa = PBXGroup;
+			children = (
+				C0D31C1C2BB5DDB10016A1BE /* CollectiMon */,
+				C0D31C1B2BB5DDB10016A1BE /* Products */,
+				1ADB9AB16F7143E39D30CE71 /* Pods */,
+				F7703E659255CC0C4FA23BF8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C0D31C1B2BB5DDB10016A1BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0D31C1A2BB5DDB10016A1BE /* CollectiMon.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0D31C1C2BB5DDB10016A1BE /* CollectiMon */ = {
+			isa = PBXGroup;
+			children = (
+				C081BAA02BB8072600719246 /* Enums */,
+				C0D31C472BB5F7890016A1BE /* CoreData */,
+				C0D31C422BB5F7010016A1BE /* Api */,
+				C0D31C342BB5DDEB0016A1BE /* Extensions */,
+				C0D31C332BB5DDE70016A1BE /* Models */,
+				C0D31C322BB5DDDF0016A1BE /* Assets */,
+				C0D31C312BB5DDD80016A1BE /* ViewModels */,
+				C0D31C302BB5DDD00016A1BE /* Views */,
+				C0D31C1D2BB5DDB10016A1BE /* CardDexApp.swift */,
+				C0D31C1F2BB5DDB10016A1BE /* ContentView.swift */,
+				C0D31C212BB5DDB20016A1BE /* Assets.xcassets */,
+				C0D31C262BB5DDB20016A1BE /* Persistence.swift */,
+				C0D31C232BB5DDB20016A1BE /* Preview Content */,
+			);
+			path = CollectiMon;
+			sourceTree = "<group>";
+		};
+		C0D31C232BB5DDB20016A1BE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C0D31C242BB5DDB20016A1BE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C0D31C302BB5DDD00016A1BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C0D31C352BB5DEDF0016A1BE /* DexView.swift */,
+				C0D31C382BB5E1760016A1BE /* RegionPokemonsView.swift */,
+				C0D31C3C2BB5E5540016A1BE /* PokMiniatureView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C0D31C312BB5DDD80016A1BE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C0D31C3A2BB5E22A0016A1BE /* RegionPokemonsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C0D31C322BB5DDDF0016A1BE /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		C0D31C332BB5DDE70016A1BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C0D31C402BB5E87D0016A1BE /* PokemonInfoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C0D31C342BB5DDEB0016A1BE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C06825E42BB86EF7004971BB /* StringsExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C0D31C422BB5F7010016A1BE /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				C0D31C452BB5F7200016A1BE /* Models */,
+				C0D31C432BB5F70C0016A1BE /* ApiManager.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		C0D31C452BB5F7200016A1BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C0D31C482BB5FA0D0016A1BE /* PokemonBasicInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C0D31C472BB5F7890016A1BE /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C0D31C282BB5DDB20016A1BE /* CardDex.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F7703E659255CC0C4FA23BF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E595B83F1F852079E6D34C3 /* Pods_CollectiMon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C0D31C192BB5DDB10016A1BE /* CollectiMon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0D31C2D2BB5DDB20016A1BE /* Build configuration list for PBXNativeTarget "CollectiMon" */;
+			buildPhases = (
+				CD37CB75BB79A3A626816AF1 /* [CP] Check Pods Manifest.lock */,
+				C0D31C162BB5DDB10016A1BE /* Sources */,
+				C0D31C172BB5DDB10016A1BE /* Frameworks */,
+				C0D31C182BB5DDB10016A1BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CollectiMon;
+			productName = CardDex;
+			productReference = C0D31C1A2BB5DDB10016A1BE /* CollectiMon.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0D31C122BB5DDB10016A1BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					C0D31C192BB5DDB10016A1BE = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = C0D31C152BB5DDB10016A1BE /* Build configuration list for PBXProject "CollectiMon" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C0D31C112BB5DDB10016A1BE;
+			productRefGroup = C0D31C1B2BB5DDB10016A1BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C0D31C192BB5DDB10016A1BE /* CollectiMon */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C0D31C182BB5DDB10016A1BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0D31C252BB5DDB20016A1BE /* Preview Assets.xcassets in Resources */,
+				C0D31C222BB5DDB20016A1BE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CD37CB75BB79A3A626816AF1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CollectiMon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0D31C162BB5DDB10016A1BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0D31C392BB5E1760016A1BE /* RegionPokemonsView.swift in Sources */,
+				C0D31C272BB5DDB20016A1BE /* Persistence.swift in Sources */,
+				C0D31C442BB5F70C0016A1BE /* ApiManager.swift in Sources */,
+				C0D31C202BB5DDB10016A1BE /* ContentView.swift in Sources */,
+				C06825E52BB86EF7004971BB /* StringsExtensions.swift in Sources */,
+				C0D31C1E2BB5DDB10016A1BE /* CardDexApp.swift in Sources */,
+				C0D31C3D2BB5E5540016A1BE /* PokMiniatureView.swift in Sources */,
+				C0D31C412BB5E87D0016A1BE /* PokemonInfoModel.swift in Sources */,
+				C0D31C492BB5FA0D0016A1BE /* PokemonBasicInfo.swift in Sources */,
+				C081BAA22BB8073600719246 /* Types.swift in Sources */,
+				C0D31C362BB5DEDF0016A1BE /* DexView.swift in Sources */,
+				C0D31C3B2BB5E22A0016A1BE /* RegionPokemonsViewModel.swift in Sources */,
+				C0D31C2A2BB5DDB20016A1BE /* CardDex.xcdatamodeld in Sources */,
+				C01953702BB7611E0044190C /* Generations.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C0D31C2B2BB5DDB20016A1BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C0D31C2C2BB5DDB20016A1BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C0D31C2E2BB5DDB20016A1BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FF35C63D983C3F99A02A0C0 /* Pods-CollectiMon.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CollectiMon/Preview Content\"";
+				DEVELOPMENT_TEAM = V3DH947793;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Artur.CollectiMon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C0D31C2F2BB5DDB20016A1BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B462522EB48F897C869090EB /* Pods-CollectiMon.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CollectiMon/Preview Content\"";
+				DEVELOPMENT_TEAM = V3DH947793;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Artur.CollectiMon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0D31C152BB5DDB10016A1BE /* Build configuration list for PBXProject "CollectiMon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0D31C2B2BB5DDB20016A1BE /* Debug */,
+				C0D31C2C2BB5DDB20016A1BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0D31C2D2BB5DDB20016A1BE /* Build configuration list for PBXNativeTarget "CollectiMon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0D31C2E2BB5DDB20016A1BE /* Debug */,
+				C0D31C2F2BB5DDB20016A1BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C0D31C282BB5DDB20016A1BE /* CardDex.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C0D31C292BB5DDB20016A1BE /* CardDex.xcdatamodel */,
+			);
+			currentVersion = C0D31C292BB5DDB20016A1BE /* CardDex.xcdatamodel */;
+			path = CardDex.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C0D31C122BB5DDB10016A1BE /* Project object */;
+}
