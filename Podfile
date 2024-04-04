@@ -6,5 +6,5 @@ target 'CollectiMon' do
   use_frameworks!
 
   # Pods for CollectiMon
-
+  pod 'lottie-ios'
 end

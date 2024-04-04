@@ -28,7 +28,6 @@ struct RegionPokemonsView: View {
                 }
             }.padding(.horizontal, 20)
         }
-//        .background(.white)
     }
 }
 
@@ -37,6 +36,3 @@ struct RegionPokemonsView_Previews: PreviewProvider {
         RegionPokemonsView(vm: RegionPokemonsViewModel(regionName: "Kanto", totalNumber: 151, pokemonCaught: 1))
     }
 }
-
-//pokemonArr: [
-//    PokemonInfoModel(name: "Bulbasaur", number: 1, image: "bulbasaur", color: .green, caught: true), PokemonInfoModel(name: "Bulbasaur", number: 1, image: "bulbasaur", color: .orange, caught: false), PokemonInfoModel(name: "Bulbasaur", number: 1, image: "bulbasaur", color: .red, caught: false), PokemonInfoModel(name: "Bulbasaur", number: 1, image: "bulbasaur", color: .mint, caught: true), PokemonInfoModel(name: "Bulbasaur", number: 1, image: "bulbasaur", color: .blue, caught: true)                      ]

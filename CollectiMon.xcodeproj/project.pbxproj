@@ -11,6 +11,7 @@
 		C01953702BB7611E0044190C /* Generations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C019536F2BB7611E0044190C /* Generations.swift */; };
 		C06825E52BB86EF7004971BB /* StringsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06825E42BB86EF7004971BB /* StringsExtensions.swift */; };
 		C081BAA22BB8073600719246 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = C081BAA12BB8073600719246 /* Types.swift */; };
+		C0988C2E2BBF33FF00378C47 /* pokeballAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = C0988C2D2BBF33FF00378C47 /* pokeballAnimation.json */; };
 		C0D31C1E2BB5DDB10016A1BE /* CardDexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C1D2BB5DDB10016A1BE /* CardDexApp.swift */; };
 		C0D31C202BB5DDB10016A1BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C1F2BB5DDB10016A1BE /* ContentView.swift */; };
 		C0D31C222BB5DDB20016A1BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D31C212BB5DDB20016A1BE /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		C019536F2BB7611E0044190C /* Generations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generations.swift; sourceTree = "<group>"; };
 		C06825E42BB86EF7004971BB /* StringsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsExtensions.swift; sourceTree = "<group>"; };
 		C081BAA12BB8073600719246 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		C0988C2D2BBF33FF00378C47 /* pokeballAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokeballAnimation.json; sourceTree = "<group>"; };
 		C0D31C1A2BB5DDB10016A1BE /* CollectiMon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectiMon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D31C1D2BB5DDB10016A1BE /* CardDexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDexApp.swift; sourceTree = "<group>"; };
 		C0D31C1F2BB5DDB10016A1BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,7 +69,6 @@
 				6FF35C63D983C3F99A02A0C0 /* Pods-CollectiMon.debug.xcconfig */,
 				B462522EB48F897C869090EB /* Pods-CollectiMon.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -78,6 +79,14 @@
 				C081BAA12BB8073600719246 /* Types.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		C0988C2C2BBF332500378C47 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				C0988C2D2BBF33FF00378C47 /* pokeballAnimation.json */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		C0D31C112BB5DDB10016A1BE = {
@@ -101,6 +110,7 @@
 		C0D31C1C2BB5DDB10016A1BE /* CollectiMon */ = {
 			isa = PBXGroup;
 			children = (
+				C0988C2C2BBF332500378C47 /* Animations */,
 				C081BAA02BB8072600719246 /* Enums */,
 				C0D31C472BB5F7890016A1BE /* CoreData */,
 				C0D31C422BB5F7010016A1BE /* Api */,
@@ -211,6 +221,7 @@
 				C0D31C162BB5DDB10016A1BE /* Sources */,
 				C0D31C172BB5DDB10016A1BE /* Frameworks */,
 				C0D31C182BB5DDB10016A1BE /* Resources */,
+				D046C77B30CBF3F5973F5EAF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,6 +272,7 @@
 			files = (
 				C0D31C252BB5DDB20016A1BE /* Preview Assets.xcassets in Resources */,
 				C0D31C222BB5DDB20016A1BE /* Assets.xcassets in Resources */,
+				C0988C2E2BBF33FF00378C47 /* pokeballAnimation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +299,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D046C77B30CBF3F5973F5EAF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CollectiMon/Pods-CollectiMon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CollectiMon/Pods-CollectiMon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CollectiMon/Pods-CollectiMon-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
