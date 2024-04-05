@@ -7,14 +7,13 @@
 
 import SwiftUI
 import CoreData
-import Lottie
 
 struct ContentView: View {
 //    @Environment(\.managedObjectContext) private var viewContext
 
     var body: some View {
-        LottieSwitch(animation: .named("pokeballAnimation"))
-
+//        LottieSwitch(animation: .named("pokeballAnimation"))
+        
         TabView{
             DexView()
                     .tabItem {

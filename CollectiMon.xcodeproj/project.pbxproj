@@ -12,6 +12,7 @@
 		C06825E52BB86EF7004971BB /* StringsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06825E42BB86EF7004971BB /* StringsExtensions.swift */; };
 		C081BAA22BB8073600719246 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = C081BAA12BB8073600719246 /* Types.swift */; };
 		C0988C2E2BBF33FF00378C47 /* pokeballAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = C0988C2D2BBF33FF00378C47 /* pokeballAnimation.json */; };
+		C0D242C82BC08FC00008ACB9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D242C72BC08FC00008ACB9 /* CoreDataManager.swift */; };
 		C0D31C1E2BB5DDB10016A1BE /* CardDexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C1D2BB5DDB10016A1BE /* CardDexApp.swift */; };
 		C0D31C202BB5DDB10016A1BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C1F2BB5DDB10016A1BE /* ContentView.swift */; };
 		C0D31C222BB5DDB20016A1BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D31C212BB5DDB20016A1BE /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		C06825E42BB86EF7004971BB /* StringsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsExtensions.swift; sourceTree = "<group>"; };
 		C081BAA12BB8073600719246 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		C0988C2D2BBF33FF00378C47 /* pokeballAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokeballAnimation.json; sourceTree = "<group>"; };
+		C0D242C72BC08FC00008ACB9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C0D31C1A2BB5DDB10016A1BE /* CollectiMon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectiMon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D31C1D2BB5DDB10016A1BE /* CardDexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDexApp.swift; sourceTree = "<group>"; };
 		C0D31C1F2BB5DDB10016A1BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				C0D31C282BB5DDB20016A1BE /* CardDex.xcdatamodeld */,
+				C0D242C72BC08FC00008ACB9 /* CoreDataManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				C0D31C392BB5E1760016A1BE /* RegionPokemonsView.swift in Sources */,
 				C0D31C272BB5DDB20016A1BE /* Persistence.swift in Sources */,
 				C0D31C442BB5F70C0016A1BE /* ApiManager.swift in Sources */,
+				C0D242C82BC08FC00008ACB9 /* CoreDataManager.swift in Sources */,
 				C0D31C202BB5DDB10016A1BE /* ContentView.swift in Sources */,
 				C06825E52BB86EF7004971BB /* StringsExtensions.swift in Sources */,
 				C0D31C1E2BB5DDB10016A1BE /* CardDexApp.swift in Sources */,

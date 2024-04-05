@@ -36,7 +36,7 @@ struct PokMiniatureView: View {
                         )
                     
                 }
-                Text(pokemon.name.capitalizedFirstLetter)
+                Text(pokemon.name.capitalizedFirstLetter.replacingMWithGenderSymbol())
                     .font(.title3)
                     .bold()
                     .padding(.bottom, 20)
