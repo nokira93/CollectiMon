@@ -24,7 +24,7 @@ class RegionPokemonsViewModel: ObservableObject {
         self.regionName = regionName
         self.totalNumber = totalNumber
         self.pokemonCaught = pokemonCaught
-
+//        CoreDataManager.shared.checkIfHaveToReload()
         let totalNum = Generations.Kanto.getNum()
         for i in 1...totalNum {
             APIManager.shared.fetchPokemons(pokID: i) { pok in

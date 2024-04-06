@@ -6,7 +6,7 @@
     </entity>
     <entity name="PokemonInfo" representedClassName="PokemonInfo" syncable="YES" codeGenerationType="class">
         <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="image" attributeType="URI"/>
+        <attribute name="image" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="type" attributeType="String"/>
         <relationship name="collectedCards" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CollectedCards" inverseName="pokemon" inverseEntity="CollectedCards"/>
