@@ -10,6 +10,9 @@ import SwiftUI
 struct RegionPokemonsView: View {
     @StateObject var vm: RegionPokemonsViewModel
     
+    @Environment(\.managedObjectContext) var managedObject
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \PokemonInfo.id, ascending: true)]) var poke: FetchedResults<PokemonInfo>
+    
     var body: some View {
         ScrollView {
             HStack(){
@@ -22,8 +25,10 @@ struct RegionPokemonsView: View {
                     .foregroundColor(.blue)
             }
             LazyVGrid(columns: vm.colums, spacing: 20) {
-                ForEach(vm.pokemonsArr, id: \.self) { pok in
-                    PokMiniatureView(pokemon: pok)
+                ForEach(poke, id: \.id) { pok in
+                    let pokType = PokType(rawValue: pok.type ?? "normal")
+                    PokMiniatureView(pokemon: PokemonInfoModel(name: pok.name ?? "Ledyba", number: Int(pok.id), image: pok.image ?? "", color: pokType?.getColor() ?? .red, caught: pok.caught))
+//                    PokMiniatureView(pokemon: pok)
                         .cornerRadius(20)
                 }
             }.padding(.horizontal, 20)

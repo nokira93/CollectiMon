@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CollectedCards" representedClassName="CollectedCards" syncable="YES" codeGenerationType="class">
+    <entity name="CollectedCards" representedClassName=".CollectedCards" syncable="YES" codeGenerationType="class">
         <attribute name="cards" optional="YES" attributeType="String"/>
-        <relationship name="pokemon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PokemonInfo" inverseName="collectedCards" inverseEntity="PokemonInfo"/>
+        <relationship name="pokemon" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PokemonInfo" inverseName="collectedCards" inverseEntity="PokemonInfo"/>
     </entity>
-    <entity name="PokemonInfo" representedClassName="PokemonInfo" syncable="YES" codeGenerationType="class">
+    <entity name="PokemonInfo" representedClassName=".PokemonInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="caught" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="image" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="type" attributeType="String"/>
-        <relationship name="collectedCards" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CollectedCards" inverseName="pokemon" inverseEntity="CollectedCards"/>
-        <relationship name="region" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="pokemon" inverseEntity="Region"/>
+        <relationship name="collectedCards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CollectedCards" inverseName="pokemon" inverseEntity="CollectedCards"/>
+        <relationship name="region" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Region" inverseName="pokemon" inverseEntity="Region"/>
     </entity>
-    <entity name="Region" representedClassName="Region" syncable="YES" codeGenerationType="class">
+    <entity name="Region" representedClassName=".Region" syncable="YES" codeGenerationType="class">
         <attribute name="regionName" attributeType="String"/>
         <relationship name="pokemon" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PokemonInfo" inverseName="region" inverseEntity="PokemonInfo"/>
     </entity>

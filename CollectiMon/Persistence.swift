@@ -7,10 +7,10 @@
 
 import CoreData
 
-struct PersistenceController {
-    static let shared = PersistenceController()
+//struct PersistenceController {
+//    static let shared = PersistenceController()
 
-    static var preview: PersistenceController = PersistenceController(inMemory: false)
+//    static var preview: PersistenceController = PersistenceController(inMemory: false)
 //    {
 //        let result = PersistenceController(inMemory: true)
 //        let viewContext = result.container.viewContext
@@ -29,10 +29,10 @@ struct PersistenceController {
 //        return result
 //    }()
 
-    let container: NSPersistentContainer
+//    let container: NSPersistentContainer
 
-    init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "CollectiMon")
+//    init(inMemory: Bool = false) {
+//        container = NSPersistentContainer(name: "CollectiMon")
 //        if inMemory {
 //            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
 //        }
@@ -53,5 +53,5 @@ struct PersistenceController {
 //            }
 //        })
 //        container.viewContext.automaticallyMergesChangesFromParent = true
-    }
-}
+//    }
+//}

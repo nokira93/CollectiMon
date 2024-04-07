@@ -14,7 +14,7 @@ class CoreDataManager {
     static let shared: CoreDataManager = CoreDataManager()
     
     private lazy var storeContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "PokemonInfo")
+        let container = NSPersistentContainer(name: "CardDex")
         container.loadPersistentStores { _, error in
             if let error = error as NSError? {
                 print("Unresolved error \(error), \(error.userInfo)")
@@ -40,12 +40,14 @@ class CoreDataManager {
 //                        pokemon.collectedCards = false
                         pokemon.image = pok.sprites.front_default
                         pokemon.name = pok.name
+                        pokemon.caught = false
 //                        pokemon.region = gen.rawValue
                         pokemon.type = pok.types.first?.type.name
                 }
             }
+            self.saveContext()
         }
-        self.saveContext()
+
     }
     
     func createBasicPokemotnInfoModel() -> PokemonInfo {
@@ -57,6 +59,7 @@ class CoreDataManager {
         guard managedContext.hasChanges else { return }
         do {
             try managedContext.save()
+            print("Saved File")
         } catch let error as NSError {
             print("Unresolved error \(error), \(error.userInfo)")
         }
@@ -66,6 +69,7 @@ class CoreDataManager {
         do {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PokemonInfo")
              let count  = try managedContext.count(for: fetchRequest)
+            print("Test coredata count: \(count)")
              return count == 0
          } catch {
              return true

@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-//    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext) private var viewContext
 
     var body: some View {
 //        LottieSwitch(animation: .named("pokeballAnimation"))
@@ -24,6 +24,7 @@ struct ContentView: View {
                         Label("Expensions", systemImage: "folder")
                     }
             RegionPokemonsView(vm: RegionPokemonsViewModel(regionName: "Kanto", totalNumber: 151, pokemonCaught: 1))
+                .environment(\.managedObjectContext, CoreDataManager.shared.managedContext)
                     .tabItem {
                         Label("Folders", systemImage: "bookmark.fill")
                     }
@@ -41,6 +42,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()
+//            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
