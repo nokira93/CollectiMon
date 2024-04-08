@@ -25,13 +25,13 @@ class RegionPokemonsViewModel: ObservableObject {
         self.regionName = regionName
         self.totalNumber = totalNumber
         self.pokemonCaught = pokemonCaught
-        CoreDataManager.shared.checkIfHaveToReload()
+//        CoreDataManager.shared.checkIfHaveToReload()
         
 //        let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
 //        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "PokemonInfo")
 //        fetchRequest.sortDescriptors = [sortDescriptor]
 //        let fetchedResults = FetchedResults<NSManagedObject>(fetchRequest: fetchRequest)
-        CoreDataManager.shared.getPokemons(gen: .Kanto)
+//        CoreDataManager.shared.getPokemons(gen: .Kanto)
 //        let totalNum = Generations.Kanto.getNum()
 //        for i in 1...totalNum {
 //            APIManager.shared.fetchPokemons(pokID: i) { pok in

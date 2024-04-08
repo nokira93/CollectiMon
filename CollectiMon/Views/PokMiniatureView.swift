@@ -48,8 +48,8 @@ struct PokMiniatureView: View {
     }
 }
 
-struct PokMiniatureView_Previews: PreviewProvider {
-    static var previews: some View {
-        PokMiniatureView(pokemon: PokemonInfoModel(name: "Bulbasaur", number: 1, image: "bulbasaur", color: .green, caught: true))
-    }
-}
+//struct PokMiniatureView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PokMiniatureView(pokemon: PokemonInfoModel(name: "Bulbasaur", number: 1, image: "bulbasaur", color: .green, caught: true))
+//    }
+//}

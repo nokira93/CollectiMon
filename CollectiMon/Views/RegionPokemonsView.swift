@@ -27,7 +27,7 @@ struct RegionPokemonsView: View {
             LazyVGrid(columns: vm.colums, spacing: 20) {
                 ForEach(poke, id: \.id) { pok in
                     let pokType = PokType(rawValue: pok.type ?? "normal")
-                    PokMiniatureView(pokemon: PokemonInfoModel(name: pok.name ?? "Ledyba", number: Int(pok.id), image: pok.image ?? "", color: pokType?.getColor() ?? .red, caught: pok.caught))
+                    PokMiniatureView(pokemon: PokemonInfoModel(name: pok.name ?? "Ledyba", number: Int(pok.id), image: pok.image!, color: pokType?.getColor() ?? .red, caught: pok.caught))
 //                    PokMiniatureView(pokemon: pok)
                         .cornerRadius(20)
                 }
