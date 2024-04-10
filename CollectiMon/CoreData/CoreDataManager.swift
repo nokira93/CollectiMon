@@ -45,9 +45,8 @@ class CoreDataManager {
                         pokemon.type = pok.types.first?.type.name
                 }
             }
-            self.saveContext()
         }
-
+        self.saveContext()
     }
     
     func createBasicPokemotnInfoModel() -> PokemonInfo {
@@ -76,4 +75,19 @@ class CoreDataManager {
          }
     }
     
+    func pokemonIsCaught(id: Int16, newValue: Bool) {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "PokemonInfo")
+        fetchRequest.predicate = NSPredicate(format: "id = \(id)", id)
+
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            if let entityToUpdate = results.first as? NSManagedObject {
+                entityToUpdate.setValue(newValue, forKey: "caught")
+                self.saveContext()
+            }
+        } catch {
+            print("Błąd podczas pobierania: \(error)")
+        }
+        
+    }
 }

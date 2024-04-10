@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct PokMiniatureView: View {
-    let pokemon: PokemonInfoModel
+   @State var pokemon: PokemonInfoModel
     
     var body: some View {
         ZStack(){
             Rectangle()
-                .foregroundColor(pokemon.caught ? pokemon.color : .white)
+                .foregroundColor(!pokemon.caught ? pokemon.color : .white)
             VStack() {
                 HStack() {
                     Spacer()
@@ -23,19 +23,26 @@ struct PokMiniatureView: View {
                         .padding(.trailing, 10)
                         .padding(.top, 10)
                 }
-                if pokemon.caught {
+//                if pokemon.caught {
                     AsyncImage(url: URL(string: pokemon.image))
                         .scaledToFit()
                 
-                } else {
-                    Color.gray
-                        .mask(
-                            Image(pokemon.image)
-                                .resizable()
-                                .scaledToFit()
-                        )
-                    
-                }
+//                } else {
+//                    Color.gray
+//                        .mask(
+//                            AsyncImage(
+//                                url: URL(string: pokemon.image),
+//                                content: { image in
+//                                    image.resizable()
+//                                        .scaledToFit()
+//                                },
+//                                placeholder: {
+//                                    ProgressView()
+//                                }
+//                            )
+//                        )
+//                }
+                
                 Text(pokemon.name.capitalizedFirstLetter.replacingMWithGenderSymbol())
                     .font(.title3)
                     .bold()
@@ -44,6 +51,10 @@ struct PokMiniatureView: View {
                     .minimumScaleFactor(0.5)
                     .lineLimit(1)
             }
+        }
+        .onTapGesture {
+            CoreDataManager.shared.pokemonIsCaught(id: Int16(pokemon.number), newValue: !pokemon.caught)
+            pokemon.caught.toggle()
         }
     }
 }

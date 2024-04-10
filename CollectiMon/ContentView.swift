@@ -10,32 +10,38 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     var body: some View {
-//        LottieSwitch(animation: .named("pokeballAnimation"))
+        //        LottieSwitch(animation: .named("pokeballAnimation"))
         
         TabView{
             DexView()
-                    .tabItem {
-                        Label("Dex", systemImage: "text.book.closed")
-                    }
+                .tabItem {
+                    Label("Dex", systemImage: "text.book.closed")
+                }
             DexView()
-                    .tabItem {
-                        Label("Expensions", systemImage: "folder")
-                    }
+                .tabItem {
+                    Label("Expensions", systemImage: "folder")
+                }
             RegionPokemonsView(vm: RegionPokemonsViewModel(regionName: "Kanto", totalNumber: 151, pokemonCaught: 1))
                 .environment(\.managedObjectContext, CoreDataManager.shared.managedContext)
-                    .tabItem {
-                        Label("Folders", systemImage: "bookmark.fill")
-                    }
+                .tabItem {
+                    Label("Folders", systemImage: "bookmark.fill")
+                }
             DexView()
-                    .tabItem {
-                        Label("Search", systemImage: "magnifyingglass")
-                    }
+                .tabItem {
+                    Label("Search", systemImage: "magnifyingglass")
+                }
             DexView()
-                    .tabItem {
-                        Label("Scanner", systemImage: "scanner")
-                    }
+                .tabItem {
+                    Label("Scanner", systemImage: "scanner")
+                }
+        }
+        .onAppear{
+            if CoreDataManager.shared.checkIfHaveToReload() {
+                CoreDataManager.shared.getPokemons(gen: .Kanto)
+                
+            }
         }
     }
 }
@@ -43,6 +49,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-//            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        //            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
