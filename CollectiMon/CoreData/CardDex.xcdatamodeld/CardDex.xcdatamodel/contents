@@ -11,7 +11,7 @@
         <attribute name="name" attributeType="String"/>
         <attribute name="type" attributeType="String"/>
         <relationship name="collectedCards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CollectedCards" inverseName="pokemon" inverseEntity="CollectedCards"/>
-        <relationship name="region" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Region" inverseName="pokemon" inverseEntity="Region"/>
+        <relationship name="region" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="pokemon" inverseEntity="Region"/>
     </entity>
     <entity name="Region" representedClassName=".Region" syncable="YES" codeGenerationType="class">
         <attribute name="regionName" attributeType="String"/>

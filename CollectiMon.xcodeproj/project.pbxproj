@@ -17,7 +17,6 @@
 		C0D31C202BB5DDB10016A1BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C1F2BB5DDB10016A1BE /* ContentView.swift */; };
 		C0D31C222BB5DDB20016A1BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D31C212BB5DDB20016A1BE /* Assets.xcassets */; };
 		C0D31C252BB5DDB20016A1BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D31C242BB5DDB20016A1BE /* Preview Assets.xcassets */; };
-		C0D31C272BB5DDB20016A1BE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C262BB5DDB20016A1BE /* Persistence.swift */; };
 		C0D31C2A2BB5DDB20016A1BE /* CardDex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C282BB5DDB20016A1BE /* CardDex.xcdatamodeld */; };
 		C0D31C362BB5DEDF0016A1BE /* DexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C352BB5DEDF0016A1BE /* DexView.swift */; };
 		C0D31C392BB5E1760016A1BE /* RegionPokemonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C382BB5E1760016A1BE /* RegionPokemonsView.swift */; };
@@ -42,7 +41,6 @@
 		C0D31C1F2BB5DDB10016A1BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C0D31C212BB5DDB20016A1BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0D31C242BB5DDB20016A1BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C0D31C262BB5DDB20016A1BE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C0D31C292BB5DDB20016A1BE /* CardDex.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardDex.xcdatamodel; sourceTree = "<group>"; };
 		C0D31C352BB5DEDF0016A1BE /* DexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DexView.swift; sourceTree = "<group>"; };
 		C0D31C382BB5E1760016A1BE /* RegionPokemonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionPokemonsView.swift; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 				C0D31C1D2BB5DDB10016A1BE /* CardDexApp.swift */,
 				C0D31C1F2BB5DDB10016A1BE /* ContentView.swift */,
 				C0D31C212BB5DDB20016A1BE /* Assets.xcassets */,
-				C0D31C262BB5DDB20016A1BE /* Persistence.swift */,
 				C0D31C232BB5DDB20016A1BE /* Preview Content */,
 			);
 			path = CollectiMon;
@@ -329,7 +326,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0D31C392BB5E1760016A1BE /* RegionPokemonsView.swift in Sources */,
-				C0D31C272BB5DDB20016A1BE /* Persistence.swift in Sources */,
 				C0D31C442BB5F70C0016A1BE /* ApiManager.swift in Sources */,
 				C0D242C82BC08FC00008ACB9 /* CoreDataManager.swift in Sources */,
 				C0D31C202BB5DDB10016A1BE /* ContentView.swift in Sources */,

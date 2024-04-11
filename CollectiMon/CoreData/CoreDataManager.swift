@@ -30,18 +30,24 @@ class CoreDataManager {
     }
     
     
-    func getPokemons(gen: Generations) {
-        let totalNum = gen.getNum()
-        for i in 1...totalNum {
+    func prepareRegions() {
+        for gen in Generations.allCases {
+            let region = self.createRegionModel()
+            region.regionName = gen.rawValue
+            getPokemons(gen: gen, reg: region)
+        }
+    }
+    
+    func getPokemons(gen: Generations, reg: Region) {
+        for i in gen.pokemonsFrom()...gen.pokemonsTo() {
             APIManager.shared.fetchPokemons(pokID: i) { pok in
                     if let typName = pok.types.first?.type.name {
                         let pokemon = self.createBasicPokemotnInfoModel()
                         pokemon.id = Int16(i)
-//                        pokemon.collectedCards = false
                         pokemon.image = pok.sprites.front_default
                         pokemon.name = pok.name
                         pokemon.caught = false
-//                        pokemon.region = gen.rawValue
+                        reg.addToPokemon(pokemon)
                         pokemon.type = pok.types.first?.type.name
                 }
             }
@@ -53,6 +59,9 @@ class CoreDataManager {
         PokemonInfo(context: storeContainer.viewContext)
     }
     
+    func createRegionModel() -> Region {
+        Region(context: storeContainer.viewContext)
+    }
     
     func saveContext() {
         guard managedContext.hasChanges else { return }
