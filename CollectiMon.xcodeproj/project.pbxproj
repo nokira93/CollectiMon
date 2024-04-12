@@ -25,6 +25,8 @@
 		C0D31C412BB5E87D0016A1BE /* PokemonInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C402BB5E87D0016A1BE /* PokemonInfoModel.swift */; };
 		C0D31C442BB5F70C0016A1BE /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C432BB5F70C0016A1BE /* ApiManager.swift */; };
 		C0D31C492BB5FA0D0016A1BE /* PokemonBasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C482BB5FA0D0016A1BE /* PokemonBasicInfo.swift */; };
+		C0FEA4412BC9B6BB00BB6DD1 /* GaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEA4402BC9B6BA00BB6DD1 /* GaugeView.swift */; };
+		C0FEA4432BC9BDA600BB6DD1 /* SummaryPokemonsCaught.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEA4422BC9BDA600BB6DD1 /* SummaryPokemonsCaught.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		C0D31C402BB5E87D0016A1BE /* PokemonInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonInfoModel.swift; sourceTree = "<group>"; };
 		C0D31C432BB5F70C0016A1BE /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		C0D31C482BB5FA0D0016A1BE /* PokemonBasicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonBasicInfo.swift; sourceTree = "<group>"; };
+		C0FEA4402BC9B6BA00BB6DD1 /* GaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeView.swift; sourceTree = "<group>"; };
+		C0FEA4422BC9BDA600BB6DD1 /* SummaryPokemonsCaught.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryPokemonsCaught.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,8 @@
 				C0D31C352BB5DEDF0016A1BE /* DexView.swift */,
 				C0D31C382BB5E1760016A1BE /* RegionPokemonsView.swift */,
 				C0D31C3C2BB5E5540016A1BE /* PokMiniatureView.swift */,
+				C0FEA4402BC9B6BA00BB6DD1 /* GaugeView.swift */,
+				C0FEA4422BC9BDA600BB6DD1 /* SummaryPokemonsCaught.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -331,11 +337,13 @@
 				C0D31C202BB5DDB10016A1BE /* ContentView.swift in Sources */,
 				C06825E52BB86EF7004971BB /* StringsExtensions.swift in Sources */,
 				C0D31C1E2BB5DDB10016A1BE /* CardDexApp.swift in Sources */,
+				C0FEA4412BC9B6BB00BB6DD1 /* GaugeView.swift in Sources */,
 				C0D31C3D2BB5E5540016A1BE /* PokMiniatureView.swift in Sources */,
 				C0D31C412BB5E87D0016A1BE /* PokemonInfoModel.swift in Sources */,
 				C0D31C492BB5FA0D0016A1BE /* PokemonBasicInfo.swift in Sources */,
 				C081BAA22BB8073600719246 /* Types.swift in Sources */,
 				C0D31C362BB5DEDF0016A1BE /* DexView.swift in Sources */,
+				C0FEA4432BC9BDA600BB6DD1 /* SummaryPokemonsCaught.swift in Sources */,
 				C0D31C3B2BB5E22A0016A1BE /* RegionPokemonsViewModel.swift in Sources */,
 				C0D31C2A2BB5DDB20016A1BE /* CardDex.xcdatamodeld in Sources */,
 				C01953702BB7611E0044190C /* Generations.swift in Sources */,

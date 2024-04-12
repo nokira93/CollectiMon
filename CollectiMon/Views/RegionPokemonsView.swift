@@ -15,6 +15,7 @@ struct RegionPokemonsView: View {
     
     var body: some View {
         ScrollView {
+            SummaryPokemonsCaught()
             HStack(){
                 Text("\(vm.regionName) |")
                     .font(.title3)
