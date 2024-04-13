@@ -40,7 +40,6 @@ struct ContentView: View {
         .onAppear{
             if CoreDataManager.shared.checkIfHaveToReload() {
                 CoreDataManager.shared.prepareRegions()
-//                CoreDataManager.shared.getPokemons(gen: .Kanto)
             }
         }
     }

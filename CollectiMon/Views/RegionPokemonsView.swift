@@ -16,23 +16,29 @@ struct RegionPokemonsView: View {
     var body: some View {
         ScrollView {
             SummaryPokemonsCaught()
-            HStack(){
-                Text("\(vm.regionName) |")
-                    .font(.title3)
-                    .bold()
-                Text("\(vm.pokemonCaught) of \(vm.totalNumber)")
-                    .font(.title3)
-                    .bold()
-                    .foregroundColor(.blue)
-            }
-            LazyVGrid(columns: vm.colums, spacing: 20) {
-                ForEach(poke, id: \.id) { pok in
-                    let pokType = PokType(rawValue: pok.type ?? "normal")
-                    PokMiniatureView(pokemon: PokemonInfoModel(name: pok.name ?? "Ledyba", number: Int(pok.id), image: pok.image!, color: pokType?.getColor() ?? .red, caught: pok.caught))
-//                    PokMiniatureView(pokemon: pok)
-                        .cornerRadius(20)
+            
+            ForEach(Generations.allCases, id: \.rawValue) { gen in
+
+                HStack(){
+                    Text("\(gen.rawValue) |")
+                        .font(.title3)
+                        .bold()
+                    Text("\(vm.pokemonCaught) of \(gen.getNum())")
+                        .font(.title3)
+                        .bold()
+                        .foregroundColor(.blue)
                 }
-            }.padding(.horizontal, 20)
+                LazyVGrid(columns: vm.colums, spacing: 20) {
+                    ForEach(gen.pokemonsFrom() - 1 ..< gen.pokemonsTo()) { index in
+//                    ForEach(poke, id: \.id) { pok in
+                        let pok = poke[index]
+                        let pokType = PokType(rawValue: pok.type ?? "normal")
+                        PokMiniatureView(pokemon: PokemonInfoModel(name: pok.name ?? "Ledyba", number: Int(pok.id), image: pok.image!, color: pokType?.getColor() ?? .red, caught: pok.caught))
+                        //                    PokMiniatureView(pokemon: pok)
+                            .cornerRadius(20)
+                    }
+                }.padding(.horizontal, 20)
+            }
         }
         .onAppear{
             CoreDataManager.shared.saveContext()
