@@ -48,7 +48,7 @@ class CoreDataManager {
                         pokemon.name = pok.name
                         pokemon.caught = false
                         reg.addToPokemon(pokemon)
-                        pokemon.type = pok.types.first?.type.name
+                        pokemon.type = typName
                 }
             }
         }

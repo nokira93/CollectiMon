@@ -32,7 +32,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
-            DexView()
+            ScannerView(vm: ScannerViewModel())
                 .tabItem {
                     Label("Scanner", systemImage: "scanner")
                 }
