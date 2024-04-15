@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ScannerView: View {
     let vm: ScannerViewModel
-    
+    @State var isShowingScanner = false
+
     var body: some View {
 //        NavigationView {
         VStack(){
@@ -31,6 +32,9 @@ struct ScannerView: View {
                     .frame(width: 45, height: 45)
                     .padding()
                     .background(.clear)
+                    .onTapGesture {
+                        isShowingScanner = true
+                    }
                     
             }
             
@@ -40,9 +44,15 @@ struct ScannerView: View {
                 .foregroundColor(.red)
                 .padding(.bottom, 20)
         }
-     
+        .sheet(isPresented: $isShowingScanner) {
+            CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: handleScan)
+        }
 //        }
 //        .navigationTitle("Scanner")
+    }
+    func handleScan(result: Result<ScanResult, ScanError>) {
+       isShowingScanner = false
+       // more code to come
     }
 }
 

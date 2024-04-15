@@ -15,6 +15,9 @@
 		C0ACEEB02BCBC80600112C39 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ACEEAF2BCBC80600112C39 /* ScannerView.swift */; };
 		C0ACEEB22BCBC81500112C39 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ACEEB12BCBC81500112C39 /* ScannerViewModel.swift */; };
 		C0ACEEB42BCBCA3B00112C39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0ACEEB32BCBCA3B00112C39 /* Assets.xcassets */; };
+		C0ACEEB72BCC5CD500112C39 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ACEEB62BCC5CD500112C39 /* ScannerViewController.swift */; };
+		C0ACEEB92BCC5D2D00112C39 /* CodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ACEEB82BCC5D2D00112C39 /* CodeScanner.swift */; };
+		C0ACEEBB2BCC5D5A00112C39 /* AVCaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ACEEBA2BCC5D5A00112C39 /* AVCaptureDevice.swift */; };
 		C0D242C82BC08FC00008ACB9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D242C72BC08FC00008ACB9 /* CoreDataManager.swift */; };
 		C0D31C1E2BB5DDB10016A1BE /* CardDexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C1D2BB5DDB10016A1BE /* CardDexApp.swift */; };
 		C0D31C202BB5DDB10016A1BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C1F2BB5DDB10016A1BE /* ContentView.swift */; };
@@ -43,6 +46,9 @@
 		C0ACEEAF2BCBC80600112C39 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		C0ACEEB12BCBC81500112C39 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
 		C0ACEEB32BCBCA3B00112C39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C0ACEEB62BCC5CD500112C39 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		C0ACEEB82BCC5D2D00112C39 /* CodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeScanner.swift; sourceTree = "<group>"; };
+		C0ACEEBA2BCC5D5A00112C39 /* AVCaptureDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureDevice.swift; sourceTree = "<group>"; };
 		C0D242C72BC08FC00008ACB9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C0D31C1A2BB5DDB10016A1BE /* CollectiMon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectiMon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D31C1D2BB5DDB10016A1BE /* CardDexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDexApp.swift; sourceTree = "<group>"; };
@@ -99,6 +105,16 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		C0ACEEB52BCC5CC000112C39 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				C0ACEEB62BCC5CD500112C39 /* ScannerViewController.swift */,
+				C0ACEEB82BCC5D2D00112C39 /* CodeScanner.swift */,
+				C0ACEEBA2BCC5D5A00112C39 /* AVCaptureDevice.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
 		C0D31C112BB5DDB10016A1BE = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +136,7 @@
 		C0D31C1C2BB5DDB10016A1BE /* CollectiMon */ = {
 			isa = PBXGroup;
 			children = (
+				C0ACEEB52BCC5CC000112C39 /* Scanner */,
 				C0988C2C2BBF332500378C47 /* Animations */,
 				C081BAA02BB8072600719246 /* Enums */,
 				C0D31C472BB5F7890016A1BE /* CoreData */,
@@ -344,6 +361,7 @@
 				C0D31C392BB5E1760016A1BE /* RegionPokemonsView.swift in Sources */,
 				C0D31C442BB5F70C0016A1BE /* ApiManager.swift in Sources */,
 				C0D242C82BC08FC00008ACB9 /* CoreDataManager.swift in Sources */,
+				C0ACEEB72BCC5CD500112C39 /* ScannerViewController.swift in Sources */,
 				C0ACEEB02BCBC80600112C39 /* ScannerView.swift in Sources */,
 				C0D31C202BB5DDB10016A1BE /* ContentView.swift in Sources */,
 				C06825E52BB86EF7004971BB /* StringsExtensions.swift in Sources */,
@@ -354,9 +372,11 @@
 				C0D31C492BB5FA0D0016A1BE /* PokemonBasicInfo.swift in Sources */,
 				C081BAA22BB8073600719246 /* Types.swift in Sources */,
 				C0D31C362BB5DEDF0016A1BE /* DexView.swift in Sources */,
+				C0ACEEB92BCC5D2D00112C39 /* CodeScanner.swift in Sources */,
 				C0ACEEB22BCBC81500112C39 /* ScannerViewModel.swift in Sources */,
 				C0FEA4432BC9BDA600BB6DD1 /* SummaryPokemonsCaught.swift in Sources */,
 				C0D31C3B2BB5E22A0016A1BE /* RegionPokemonsViewModel.swift in Sources */,
+				C0ACEEBB2BCC5D5A00112C39 /* AVCaptureDevice.swift in Sources */,
 				C0D31C2A2BB5DDB20016A1BE /* CardDex.xcdatamodeld in Sources */,
 				C01953702BB7611E0044190C /* Generations.swift in Sources */,
 			);
@@ -491,6 +511,7 @@
 				DEVELOPMENT_TEAM = V3DH947793;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is needed to scan cards.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -521,6 +542,7 @@
 				DEVELOPMENT_TEAM = V3DH947793;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is needed to scan cards.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
