@@ -9,4 +9,14 @@ import SwiftUI
 
 class ScannerViewModel: ObservableObject {
 
+    func handleScan(result: Result<ScanResult, ScanError>) {
+        switch result {
+        case .success(let result):
+            
+            print("Test sukces")
+
+        case .failure(let error):
+            print("Scanning failed: \(error.localizedDescription)")
+        }
+    }
 }

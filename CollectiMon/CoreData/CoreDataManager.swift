@@ -97,6 +97,18 @@ class CoreDataManager {
         } catch {
             print("Błąd podczas pobierania: \(error)")
         }
+    }
+    
+    func delete(gen: Generations) {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "PokemonInfo")
         
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            
+//            managedContiext.deleteObject(managedObjectData)
+
+        } catch let error as NSError {
+            print("Detele all data in error : \(error) \(error.userInfo)")
+        }
     }
 }
