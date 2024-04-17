@@ -28,7 +28,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Folders", systemImage: "bookmark.fill")
                 }
-            DexView()
+            SearchView()
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }

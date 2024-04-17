@@ -67,8 +67,8 @@ extension Generations {
         case .Galar:
             return 810
         case .Paldea:
-//            return 858
-            return 906
+            return 858
+//            return 906
         }
     }
     
@@ -89,11 +89,11 @@ extension Generations {
         case .Alola:
             return 809
         case .Galar:
-//            return 858
-            return 905
+            return 858
+//            return 905
         case .Paldea:
-//            return 858
-            return 1025
+            return 858
+//            return 1025
         }
     }
 }
