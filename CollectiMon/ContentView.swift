@@ -28,7 +28,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Folders", systemImage: "bookmark.fill")
                 }
-            SearchView()
+            SearchView(vm: SearchViewModel())
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }

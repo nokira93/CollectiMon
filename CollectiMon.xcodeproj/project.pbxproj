@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		22294AD37189CAF07C0B5039 /* Pods_CollectiMon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E595B83F1F852079E6D34C3 /* Pods_CollectiMon.framework */; };
 		C00FAAFB2BD03F1E00D457A2 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00FAAFA2BD03F1E00D457A2 /* SearchView.swift */; };
+		C00FAAFD2BD0526F00D457A2 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00FAAFC2BD0526F00D457A2 /* SearchViewModel.swift */; };
 		C01953702BB7611E0044190C /* Generations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C019536F2BB7611E0044190C /* Generations.swift */; };
 		C06825E52BB86EF7004971BB /* StringsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06825E42BB86EF7004971BB /* StringsExtensions.swift */; };
 		C081BAA22BB8073600719246 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = C081BAA12BB8073600719246 /* Types.swift */; };
@@ -41,6 +42,7 @@
 		6FF35C63D983C3F99A02A0C0 /* Pods-CollectiMon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectiMon.debug.xcconfig"; path = "Target Support Files/Pods-CollectiMon/Pods-CollectiMon.debug.xcconfig"; sourceTree = "<group>"; };
 		B462522EB48F897C869090EB /* Pods-CollectiMon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectiMon.release.xcconfig"; path = "Target Support Files/Pods-CollectiMon/Pods-CollectiMon.release.xcconfig"; sourceTree = "<group>"; };
 		C00FAAFA2BD03F1E00D457A2 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		C00FAAFC2BD0526F00D457A2 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		C019536F2BB7611E0044190C /* Generations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generations.swift; sourceTree = "<group>"; };
 		C06825E42BB86EF7004971BB /* StringsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsExtensions.swift; sourceTree = "<group>"; };
 		C081BAA12BB8073600719246 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				C0D31C3A2BB5E22A0016A1BE /* RegionPokemonsViewModel.swift */,
 				C0ACEEB12BCBC81500112C39 /* ScannerViewModel.swift */,
+				C00FAAFC2BD0526F00D457A2 /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				C0D31C412BB5E87D0016A1BE /* PokemonInfoModel.swift in Sources */,
 				C0D31C492BB5FA0D0016A1BE /* PokemonBasicInfo.swift in Sources */,
 				C081BAA22BB8073600719246 /* Types.swift in Sources */,
+				C00FAAFD2BD0526F00D457A2 /* SearchViewModel.swift in Sources */,
 				C0D31C362BB5DEDF0016A1BE /* DexView.swift in Sources */,
 				C0ACEEB92BCC5D2D00112C39 /* CodeScanner.swift in Sources */,
 				C0ACEEB22BCBC81500112C39 /* ScannerViewModel.swift in Sources */,

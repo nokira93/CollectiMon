@@ -8,15 +8,13 @@
 import SwiftUI
 
 struct SearchView: View {
-
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \PokemonInfo.id, ascending: true)]) var poke: FetchedResults<PokemonInfo>
     
-    @State private var searchText = ""
-
+    @StateObject var vm: SearchViewModel
+    
     var body: some View {
         NavigationStack {
             List {
-                ForEach(searchResults, id: \.self) { pok in
+                ForEach(vm.searchResults, id: \.self) { pok in
 //                    NavigationLink {
                         Text(":D")
 //                    } label: {
@@ -25,18 +23,10 @@ struct SearchView: View {
                 }
             }
         }
-        .searchable(text: $searchText)
-    }
-
-    var searchResults: [PokemonInfo] {
-        if searchText.isEmpty {
-            return []
-        } else {
-            return poke.filter { $0.name?.contains(searchText) ?? false}
-        }
+        .searchable(text: $vm.searchText)
     }
 }
 
 #Preview {
-    SearchView()
+    SearchView(vm: SearchViewModel())
 }

@@ -38,18 +38,17 @@ class CoreDataManager {
         }
     }
     
-    func getPokemons(gen: Generations, reg: Region) {
+    func getPokemons(gen: Generations, reg: Region) async {
         for i in gen.pokemonsFrom()...gen.pokemonsTo() {
-            APIManager.shared.fetchPokemons(pokID: i) { pok in
-                    if let typName = pok.types.first?.type.name {
-                        let pokemon = self.createBasicPokemotnInfoModel()
-                        pokemon.id = Int16(i)
-                        pokemon.image = pok.sprites.front_default
-                        pokemon.name = pok.name
-                        pokemon.caught = false
-                        reg.addToPokemon(pokemon)
-                        pokemon.type = typName
-                }
+            let pok = await APIManager.shared.fetchPokemons(pokID: i)
+            if let typName = pok.types.first?.type.name {
+                let pokemon = self.createBasicPokemotnInfoModel()
+                pokemon.id = Int16(i)
+                pokemon.image = pok.sprites.front_default
+                pokemon.name = pok.name
+                pokemon.caught = false
+                reg.addToPokemon(pokemon)
+                pokemon.type = typName
             }
         }
         self.saveContext()
