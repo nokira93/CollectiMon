@@ -38,17 +38,18 @@ class CoreDataManager {
         }
     }
     
-    func getPokemons(gen: Generations, reg: Region) async {
+    func getPokemons(gen: Generations, reg: Region)  {
         for i in gen.pokemonsFrom()...gen.pokemonsTo() {
-            let pok = await APIManager.shared.fetchPokemons(pokID: i)
-            if let typName = pok.types.first?.type.name {
-                let pokemon = self.createBasicPokemotnInfoModel()
-                pokemon.id = Int16(i)
-                pokemon.image = pok.sprites.front_default
-                pokemon.name = pok.name
-                pokemon.caught = false
-                reg.addToPokemon(pokemon)
-                pokemon.type = typName
+            APIManager.shared.fetchPokemons(pokID: i) { pok in
+                if let typName = pok.types.first?.type.name {
+                    let pokemon = self.createBasicPokemotnInfoModel()
+                    pokemon.id = Int16(i)
+                    pokemon.image = pok.sprites.front_default
+                    pokemon.name = pok.name
+                    pokemon.caught = false
+                    reg.addToPokemon(pokemon)
+                    pokemon.type = typName
+                }
             }
         }
         self.saveContext()
@@ -77,7 +78,8 @@ class CoreDataManager {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PokemonInfo")
              let count  = try managedContext.count(for: fetchRequest)
             print("Test coredata count: \(count)")
-             return count == 0
+            
+            return count != Constraints.numOfPokemons
          } catch {
              return true
          }

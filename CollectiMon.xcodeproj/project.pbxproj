@@ -20,6 +20,7 @@
 		C0ACEEB72BCC5CD500112C39 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ACEEB62BCC5CD500112C39 /* ScannerViewController.swift */; };
 		C0ACEEB92BCC5D2D00112C39 /* CodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ACEEB82BCC5D2D00112C39 /* CodeScanner.swift */; };
 		C0ACEEBB2BCC5D5A00112C39 /* AVCaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ACEEBA2BCC5D5A00112C39 /* AVCaptureDevice.swift */; };
+		C0CAD9472BD2F48B00E48C8F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CAD9462BD2F48B00E48C8F /* Constants.swift */; };
 		C0D242C82BC08FC00008ACB9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D242C72BC08FC00008ACB9 /* CoreDataManager.swift */; };
 		C0D31C1E2BB5DDB10016A1BE /* CardDexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C1D2BB5DDB10016A1BE /* CardDexApp.swift */; };
 		C0D31C202BB5DDB10016A1BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C1F2BB5DDB10016A1BE /* ContentView.swift */; };
@@ -53,6 +54,7 @@
 		C0ACEEB62BCC5CD500112C39 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		C0ACEEB82BCC5D2D00112C39 /* CodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeScanner.swift; sourceTree = "<group>"; };
 		C0ACEEBA2BCC5D5A00112C39 /* AVCaptureDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureDevice.swift; sourceTree = "<group>"; };
+		C0CAD9462BD2F48B00E48C8F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C0D242C72BC08FC00008ACB9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C0D31C1A2BB5DDB10016A1BE /* CollectiMon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectiMon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D31C1D2BB5DDB10016A1BE /* CardDexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDexApp.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				C0D31C1F2BB5DDB10016A1BE /* ContentView.swift */,
 				C0D31C212BB5DDB20016A1BE /* Assets.xcassets */,
 				C0D31C232BB5DDB20016A1BE /* Preview Content */,
+				C0CAD9462BD2F48B00E48C8F /* Constants.swift */,
 			);
 			path = CollectiMon;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				C0ACEEBB2BCC5D5A00112C39 /* AVCaptureDevice.swift in Sources */,
 				C0D31C2A2BB5DDB20016A1BE /* CardDex.xcdatamodeld in Sources */,
 				C01953702BB7611E0044190C /* Generations.swift in Sources */,
+				C0CAD9472BD2F48B00E48C8F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

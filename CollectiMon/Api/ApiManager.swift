@@ -34,7 +34,8 @@ class APIManager {
                     let pokemon = try JSONDecoder().decode(PokemonBasicInfo.self, from: data)
                     completionHandler(pokemon)
                 } catch {
-                    print("Error decoding: \(error)")
+                    self.fetchPokemons(pokID: pokID, completionHandler: completionHandler)
+                    print("Error decoding: id: \(pokID) || \(error)")
                 }
             }
         }.resume()
