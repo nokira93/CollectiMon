@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23E224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CollectedCards" representedClassName=".CollectedCards" syncable="YES" codeGenerationType="class">
         <attribute name="cards" optional="YES" attributeType="String"/>
+        <relationship name="folder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Folder" inverseName="card" inverseEntity="Folder"/>
         <relationship name="pokemon" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PokemonInfo" inverseName="collectedCards" inverseEntity="PokemonInfo"/>
+    </entity>
+    <entity name="Folder" representedClassName="Folder" syncable="YES" codeGenerationType="class">
+        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CollectedCards" inverseName="folder" inverseEntity="CollectedCards"/>
     </entity>
     <entity name="PokemonInfo" representedClassName=".PokemonInfo" syncable="YES" codeGenerationType="class">
         <attribute name="caught" attributeType="Boolean" usesScalarValueType="YES"/>
