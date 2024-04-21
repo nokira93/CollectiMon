@@ -25,5 +25,9 @@ class RegionPokemonsViewModel: ObservableObject {
         self.regionName = regionName
         self.totalNumber = totalNumber
         self.pokemonCaught = pokemonCaught
+
+//        let caught = poke.filter{ $0.caught }
+//        self.pokemonCaught = caught.count
+        
     }
 }

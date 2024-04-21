@@ -15,7 +15,7 @@ struct RegionPokemonsView: View {
     
     var body: some View {
         ScrollView {
-            SummaryPokemonsCaught()
+            SummaryPokemonsCaught(pokemonsCaught: poke.filter{ $0.caught }.count )
             
             ForEach(Generations.allCases, id: \.rawValue) { gen in
 

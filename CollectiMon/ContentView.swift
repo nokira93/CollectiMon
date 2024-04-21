@@ -17,8 +17,7 @@ struct ContentView: View {
             LoadingView()
         } else {
             TabView{
-                RegionPokemonsView(vm: RegionPokemonsViewModel(regionName: "Kanto", totalNumber: 151, pokemonCaught: 1))
-                    .environment(\.managedObjectContext, CoreDataManager.shared.managedContext)
+                DexView()
                     .tabItem {
                         Label("Dex", systemImage: "text.book.closed")
                     }
@@ -26,7 +25,8 @@ struct ContentView: View {
                     .tabItem {
                         Label("Expensions", systemImage: "folder")
                     }
-                DexView()
+                RegionPokemonsView(vm: RegionPokemonsViewModel(regionName: "Kanto", totalNumber: 151, pokemonCaught: 1))
+                    .environment(\.managedObjectContext, CoreDataManager.shared.managedContext)
                     .tabItem {
                         Label("Folders", systemImage: "bookmark.fill")
                     }
@@ -40,11 +40,6 @@ struct ContentView: View {
                     }
             }
         }
-//        .onAppear{
-//            if CoreDataManager.shared.checkIfHaveToReload() {
-//                CoreDataManager.shared.prepareRegions()
-//            }
-//        }
     }
 }
 

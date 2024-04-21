@@ -9,6 +9,14 @@ import SwiftUI
 
 struct SummaryPokemonsCaught: View {
     
+    var pokemonsCaught: Int
+    var percent: Double
+    
+    init(pokemonsCaught: Int) {
+        self.pokemonsCaught = pokemonsCaught
+        self.percent = Double(pokemonsCaught) / Double(Constraints.numOfPokemons)  * 100
+    }
+    
     var body: some View {
         ZStack() {
             HStack() {
@@ -18,7 +26,7 @@ struct SummaryPokemonsCaught: View {
                         .lineLimit(1)
                         .padding(.vertical, 5)
                         .font(.system(size: 22, weight: .bold))
-                    Text("100 of 1025")
+                    Text("\(pokemonsCaught) of 1025")
                         .font(.system(size: 22))
                     Text("Cards Owned")
                         .lineLimit(1)
@@ -33,7 +41,7 @@ struct SummaryPokemonsCaught: View {
             HStack(){
                 Spacer()
 
-                GaugeView(percantge: 21.5)
+                GaugeView(percantge: percent)
                     .padding(.trailing, 30)
                     .frame(width: 150)
             }
@@ -43,6 +51,6 @@ struct SummaryPokemonsCaught: View {
 
 struct SummaryPokemonsCaught_Previews: PreviewProvider {
     static var previews: some View {
-        SummaryPokemonsCaught()
+        SummaryPokemonsCaught(pokemonsCaught: 2)
     }
 }

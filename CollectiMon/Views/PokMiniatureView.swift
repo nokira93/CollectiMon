@@ -13,7 +13,7 @@ struct PokMiniatureView: View {
     var body: some View {
         ZStack(){
             Rectangle()
-                .foregroundColor(!pokemon.caught ? pokemon.color : .white)
+                .foregroundColor(pokemon.caught ? pokemon.color : .white)
             VStack() {
                 HStack() {
                     Spacer()
@@ -23,13 +23,21 @@ struct PokMiniatureView: View {
                         .padding(.trailing, 10)
                         .padding(.top, 10)
                 }
-//                if pokemon.caught {
+                if pokemon.caught {
                     AsyncImage(url: URL(string: pokemon.image))
                         .scaledToFit()
                 
-//                } else {
+                } else {
+                    AsyncImage(url: URL(string: pokemon.image))
+                        .scaledToFit()
+                        .saturation(0.0)
+                    
 //                    Color.gray
 //                        .mask(
+//                            AsyncImage(url: URL(string: pokemon.image))
+//                                .scaledToFit()
+//                            )
+                    
 //                            AsyncImage(
 //                                url: URL(string: pokemon.image),
 //                                content: { image in
@@ -41,7 +49,7 @@ struct PokMiniatureView: View {
 //                                }
 //                            )
 //                        )
-//                }
+                }
                 
                 Text(pokemon.name.capitalizedFirstLetter.replacingMWithGenderSymbol())
                     .font(.title3)
@@ -59,8 +67,8 @@ struct PokMiniatureView: View {
     }
 }
 
-//struct PokMiniatureView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PokMiniatureView(pokemon: PokemonInfoModel(name: "Bulbasaur", number: 1, image: "bulbasaur", color: .green, caught: true))
-//    }
-//}
+struct PokMiniatureView_Previews: PreviewProvider {
+    static var previews: some View {
+        PokMiniatureView(pokemon: PokemonInfoModel(name: "Bulbasaur", number: 1, image: "bulbasaur", color: .green, caught: false))
+    }
+}
