@@ -40,10 +40,30 @@ struct SummaryPokemonsCaught: View {
             }
             HStack(){
                 Spacer()
-
-                GaugeView(percantge: percent)
+//Gaure View
+                ZStack {
+                    Circle()
+                        .trim(from: 0, to: 1)
+                        .stroke(.blue.opacity(0.25), lineWidth: 20)
+                    
+                    Circle()
+                        .trim(from: 0, to: percent / 100)
+                        .stroke(.blue, style: StrokeStyle(lineWidth: 20, lineCap: .round))
+                        .rotationEffect(.degrees(270))
+                    
+                    VStack {
+                        Text("\(String(format: "%.1f", percent))%")
+                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                            .foregroundColor(.blue.opacity(0.8))
+                    }
+                }
+//                }               GaugeView(percantge: percent)
                     .padding(.trailing, 30)
                     .frame(width: 150)
+                
+//                GaugeView(percantge: percent)
+//                    .padding(.trailing, 30)
+//                    .frame(width: 150)
             }
         }
     }

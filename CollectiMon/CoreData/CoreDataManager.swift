@@ -8,11 +8,16 @@
 import Foundation
 import SwiftUI
 import CoreData
+import Combine
 
 class CoreDataManager {
     
     static let shared: CoreDataManager = CoreDataManager()
     
+    let allPokemonFetched = PassthroughSubject<Bool, Never>()
+    
+    private let apiGroup = DispatchGroup()
+
     private lazy var storeContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "CardDex")
         container.loadPersistentStores { _, error in
@@ -36,10 +41,14 @@ class CoreDataManager {
             region.regionName = gen.rawValue
             getPokemons(gen: gen, reg: region)
         }
+        apiGroup.notify(queue: .main) {
+            self.allPokemonFetched.send(true)
+        }
     }
     
     func getPokemons(gen: Generations, reg: Region)  {
         for i in gen.pokemonsFrom()...gen.pokemonsTo() {
+            apiGroup.enter()
             APIManager.shared.fetchPokemons(pokID: i) { pok in
                 if let typName = pok.types.first?.type.name {
                     let pokemon = self.createBasicPokemotnInfoModel()
@@ -49,10 +58,10 @@ class CoreDataManager {
                     pokemon.caught = false
                     reg.addToPokemon(pokemon)
                     pokemon.type = typName
+                    self.apiGroup.leave()
                 }
             }
         }
-        self.saveContext()
     }
     
     func createBasicPokemotnInfoModel() -> PokemonInfo {

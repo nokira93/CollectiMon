@@ -6,15 +6,25 @@
 //
 
 import Foundation
+import Combine
 
 class MainViewModel: ObservableObject {
     
     @Published var isLoading: Bool = true
-
+    var cancellable: [AnyCancellable] = []
+    
     init() {
+        
+        CoreDataManager.shared.allPokemonFetched.sink { value in
+            if value {
+                self.isLoading = false
+                CoreDataManager.shared.saveContext()
+            }
+        }
+        .store(in: &cancellable)
+        
         if CoreDataManager.shared.checkIfHaveToReload() {
             CoreDataManager.shared.prepareRegions()
         }
-        isLoading = false
     }
 }
