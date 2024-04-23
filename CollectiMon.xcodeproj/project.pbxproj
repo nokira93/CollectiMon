@@ -23,6 +23,7 @@
 		C0ACEEB72BCC5CD500112C39 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ACEEB62BCC5CD500112C39 /* ScannerViewController.swift */; };
 		C0ACEEB92BCC5D2D00112C39 /* CodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ACEEB82BCC5D2D00112C39 /* CodeScanner.swift */; };
 		C0ACEEBB2BCC5D5A00112C39 /* AVCaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ACEEBA2BCC5D5A00112C39 /* AVCaptureDevice.swift */; };
+		C0B864082BD8415C00862F6F /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B864072BD8415C00862F6F /* LoadingViewModel.swift */; };
 		C0CAD9472BD2F48B00E48C8F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CAD9462BD2F48B00E48C8F /* Constants.swift */; };
 		C0D242C82BC08FC00008ACB9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D242C72BC08FC00008ACB9 /* CoreDataManager.swift */; };
 		C0D31C1E2BB5DDB10016A1BE /* CardDexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D31C1D2BB5DDB10016A1BE /* CardDexApp.swift */; };
@@ -60,6 +61,7 @@
 		C0ACEEB62BCC5CD500112C39 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		C0ACEEB82BCC5D2D00112C39 /* CodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeScanner.swift; sourceTree = "<group>"; };
 		C0ACEEBA2BCC5D5A00112C39 /* AVCaptureDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureDevice.swift; sourceTree = "<group>"; };
+		C0B864072BD8415C00862F6F /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
 		C0CAD9462BD2F48B00E48C8F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C0D242C72BC08FC00008ACB9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C0D31C1A2BB5DDB10016A1BE /* CollectiMon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectiMon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +200,7 @@
 				C0ACEEB12BCBC81500112C39 /* ScannerViewModel.swift */,
 				C00FAAFC2BD0526F00D457A2 /* SearchViewModel.swift */,
 				C00AAD3D2BD3FE16003F773C /* MainViewModel.swift */,
+				C0B864072BD8415C00862F6F /* LoadingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -290,7 +293,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					C0D31C192BB5DDB10016A1BE = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -379,6 +382,7 @@
 				C0D31C392BB5E1760016A1BE /* RegionPokemonsView.swift in Sources */,
 				C0D31C442BB5F70C0016A1BE /* ApiManager.swift in Sources */,
 				C0D242C82BC08FC00008ACB9 /* CoreDataManager.swift in Sources */,
+				C0B864082BD8415C00862F6F /* LoadingViewModel.swift in Sources */,
 				C0ACEEB72BCC5CD500112C39 /* ScannerViewController.swift in Sources */,
 				C0ACEEB02BCBC80600112C39 /* ScannerView.swift in Sources */,
 				C00AAD3E2BD3FE16003F773C /* MainViewModel.swift in Sources */,
@@ -445,6 +449,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -505,6 +510,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

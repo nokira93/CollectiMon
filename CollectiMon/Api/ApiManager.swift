@@ -18,6 +18,9 @@ class APIManager {
     
     static let shared = APIManager()
     
+    let pokemonFetched = PassthroughSubject<Double, Never>()
+    var fetched = 0
+    
     private init(){
         
     }
@@ -32,8 +35,12 @@ class APIManager {
             if let data = data {
                 do {
                     let pokemon = try JSONDecoder().decode(PokemonBasicInfo.self, from: data)
+                    self.fetched += 1
+                    self.pokemonFetched.send(Double(self.fetched))
                     completionHandler(pokemon)
                 } catch {
+                    self.fetched += 1
+                    self.pokemonFetched.send(Double(self.fetched))
                     print("Error decoding: id: \(pokID) || \(error)")
                 }
             }

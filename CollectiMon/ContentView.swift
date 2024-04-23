@@ -14,7 +14,7 @@ struct ContentView: View {
 
     var body: some View {
         if vm.isLoading {
-            LoadingView()
+            LoadingView(vm: LoadingViewModel())
         } else {
             TabView{
                 DexView()

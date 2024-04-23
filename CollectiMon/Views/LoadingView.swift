@@ -7,10 +7,10 @@
 
 import SwiftUI
 import Lottie
-//import Combine
+import Combine
 
 struct LoadingView: View {
-    var loaded: Int = 0
+    @StateObject var vm: LoadingViewModel
     
     var body: some View {
         VStack() {
@@ -20,7 +20,7 @@ struct LoadingView: View {
             Text("Loading...")
                 .font(.title)
                 .bold()
-            Text("\(loaded) %")
+            Text("\(vm.loaded) %")
                 .font(.title)
                 .bold()
         }
@@ -28,5 +28,5 @@ struct LoadingView: View {
 }
 
 #Preview {
-    LoadingView()
+    LoadingView(vm: LoadingViewModel())
 }
