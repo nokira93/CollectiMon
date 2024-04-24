@@ -17,16 +17,17 @@ struct ContentView: View {
             LoadingView(vm: LoadingViewModel())
         } else {
             TabView{
-                DexView()
+                RegionPokemonsView(vm: RegionPokemonsViewModel(regionName: "Kanto", totalNumber: 151, pokemonCaught: 1))
+                    .environment(\.managedObjectContext, CoreDataManager.shared.managedContext)
                     .tabItem {
                         Label("Dex", systemImage: "text.book.closed")
                     }
-                DexView()
+                ExtensionView(vm: ExtensionViewModel())
+                    .environment(\.managedObjectContext, CoreDataManager.shared.managedContext)
                     .tabItem {
                         Label("Expensions", systemImage: "folder")
                     }
-                RegionPokemonsView(vm: RegionPokemonsViewModel(regionName: "Kanto", totalNumber: 151, pokemonCaught: 1))
-                    .environment(\.managedObjectContext, CoreDataManager.shared.managedContext)
+                DexView()
                     .tabItem {
                         Label("Folders", systemImage: "bookmark.fill")
                     }

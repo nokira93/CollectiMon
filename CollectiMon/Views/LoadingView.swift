@@ -14,9 +14,12 @@ struct LoadingView: View {
     
     var body: some View {
         VStack() {
-            LottieSwitch(animation: .named("pokeballAnimation"))
+            LottieView(animation: .named("pokeballAnimation"))
+                .playing(loopMode: .loop)
                 .padding(.horizontal, 30)
                 .scaledToFit()
+                
+                
             Text("Loading...")
                 .font(.title)
                 .bold()

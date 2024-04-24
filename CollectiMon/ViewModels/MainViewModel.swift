@@ -25,6 +25,8 @@ class MainViewModel: ObservableObject {
         
         if CoreDataManager.shared.checkIfHaveToReload() {
             CoreDataManager.shared.prepareRegions()
+        } else {
+            isLoading = false
         }
     }
 }

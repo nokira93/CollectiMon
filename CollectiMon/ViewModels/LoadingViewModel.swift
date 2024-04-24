@@ -15,16 +15,17 @@ class LoadingViewModel: ObservableObject {
     var cancellable: [AnyCancellable] = []
     
     init() {
-        APIManager.shared.pokemonFetched.sink { value in
+        APIManager.shared.pokemonFetched.sink { [weak self] value in
             //Do testow narazie
             var newValue: Double
             newValue = value / Double(Constraints.numOfPokemons)
             newValue = newValue * 100
-            DispatchQueue.main.async {
-                self.loaded = Int(newValue)
-                print("Test loaded: \(self.loaded)")
+            if Int(newValue) != self?.loaded {
+                DispatchQueue.main.async {
+                    self?.loaded = Int(newValue)
+                    print("Test loaded: \(self?.loaded)")
+                }
             }
-
         }.store(in: &cancellable)
     }
     

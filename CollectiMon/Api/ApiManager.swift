@@ -47,4 +47,24 @@ class APIManager {
         }
         .resume()
     }
+    
+    func fetchSeries(completionHandler: @escaping (SeriesResults) -> Void) {
+        guard let url = URL(string: "https://api.pokemontcg.io/v2/sets?q=series:Scarlet&Violet") else { return }
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                print("Error fetching: \(error)")
+                return
+            }
+            if let data = data {
+                do {
+                    let series = try JSONDecoder().decode(SeriesResults.self, from: data)
+                    
+                    completionHandler(series)
+                } catch {
+                    print("Error decoding series: \(error)")
+                }
+            }
+        }
+        .resume()
+    }
 }
