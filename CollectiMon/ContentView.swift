@@ -40,6 +40,7 @@ struct ContentView: View {
                         Label("Scanner", systemImage: "scanner")
                     }
             }
+            .background(Color("backColor"))
         }
     }
 }

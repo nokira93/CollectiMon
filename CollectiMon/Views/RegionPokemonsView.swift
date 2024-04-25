@@ -40,9 +40,9 @@ struct RegionPokemonsView: View {
                 }.padding(.horizontal, 20)
             }
         }
-        .onAppear{
-            CoreDataManager.shared.saveContext()
-        }
+//        .onAppear{
+//            CoreDataManager.shared.saveContext()
+//        }
     }
 }
 

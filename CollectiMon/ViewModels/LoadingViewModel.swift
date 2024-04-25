@@ -23,7 +23,6 @@ class LoadingViewModel: ObservableObject {
             if Int(newValue) != self?.loaded {
                 DispatchQueue.main.async {
                     self?.loaded = Int(newValue)
-                    print("Test loaded: \(self?.loaded)")
                 }
             }
         }.store(in: &cancellable)

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PokMiniatureView: View {
-   @State var pokemon: PokemonInfoModel
+    @State var pokemon: PokemonInfoModel
     
     var body: some View {
         ZStack(){
@@ -26,29 +26,11 @@ struct PokMiniatureView: View {
                 if pokemon.caught {
                     AsyncImage(url: URL(string: pokemon.image))
                         .scaledToFit()
-                
+                    
                 } else {
                     AsyncImage(url: URL(string: pokemon.image))
                         .scaledToFit()
                         .saturation(0.0)
-                    
-//                    Color.gray
-//                        .mask(
-//                            AsyncImage(url: URL(string: pokemon.image))
-//                                .scaledToFit()
-//                            )
-                    
-//                            AsyncImage(
-//                                url: URL(string: pokemon.image),
-//                                content: { image in
-//                                    image.resizable()
-//                                        .scaledToFit()
-//                                },
-//                                placeholder: {
-//                                    ProgressView()
-//                                }
-//                            )
-//                        )
                 }
                 
                 Text(pokemon.name.capitalizedFirstLetter.replacingMWithGenderSymbol())

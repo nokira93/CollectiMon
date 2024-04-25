@@ -41,9 +41,12 @@ class CoreDataManager {
             region.regionName = gen.rawValue
             getPokemons(gen: gen, reg: region)
         }
+        
+        self.getSeries()
+        
         apiGroup.notify(queue: .main) {
             self.allPokemonFetched.send(true)
-            self.getSeries()
+//            CoreDataManager.shared.saveContext()
         }
     }
     
@@ -66,18 +69,19 @@ class CoreDataManager {
     }
     
     func getSeries()  {
-        apiGroup.enter()
         APIManager.shared.fetchSeries() { arr in
+//            self.apiGroup.enter()
             arr.data.forEach { series in
                 let set = self.createSeriesModel()
                 set.basicCards = Int16(series.printedTotal)
                 set.totalCards = Int16(series.total)
                 set.code = series.ptcgoCode
-                set.logo = URL(string: series.images.logo)
+                set.logo = series.images.logo
                 set.name = series.name
                 set.series = series.series
-                set.symbol = URL(string: series.images.symbol)
+                set.symbol = series.images.symbol
                 print("Series: \(series.name) || \(series.total)")
+//                self.apiGroup.leave()
             }
         }
     }
