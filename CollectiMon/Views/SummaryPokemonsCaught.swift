@@ -32,7 +32,7 @@ struct SummaryPokemonsCaught: View {
                         .lineLimit(1)
                         .padding(.vertical, 5)
                         .font(.system(size: 22, weight: .bold, design: .rounded))
-                    Text("120")
+                    Text("0")
                         .font(.system(size: 22))
                 }
                 .padding(.horizontal, 30)
