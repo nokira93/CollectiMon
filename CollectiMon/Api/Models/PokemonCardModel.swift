@@ -9,6 +9,10 @@ import Foundation
 
 struct PokemonCardResults: Codable {
     let data: [PokemonCardModel]
+    let page: Int
+    let count: Int
+    let totalCount: Int
+    let pageSize: Int
 }
 
 struct PokemonCardModel: Codable {
@@ -40,9 +44,3 @@ struct PricesModel: Codable {
     let normal: String?
     let holofoil: String?
 }
-
-//https://api.pokemontcg.io/v2/cards?page=2&q=set.id:sv4
-//https://api.pokemontcg.io/v2/sets?pageSize=250
-//
-//
-//https://api.pokemontcg.io/v2/cards?page=2&q=set.id:sv4

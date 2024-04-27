@@ -68,8 +68,12 @@ class APIManager {
         .resume()
     }
     
-    func fetchCards(completionHandler: @escaping (SeriesResults) -> Void) {
-        guard let url = URL(string: "https://api.pokemontcg.io/v2/sets?q=series:Scarlet&Violet") else { return }
+    func fetchCards(setName: String, completionHandler: @escaping (PokemonCardResults) -> Void) {
+        
+        var page = 1
+        var fetchURL =  "https://api.pokemontcg.io/v2/cards?page=\(page)&q=set.id:\(setName)"
+        
+        guard let url = URL(string: fetchURL) else { return }
         URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 print("Error fetching: \(error)")
@@ -77,9 +81,9 @@ class APIManager {
             }
             if let data = data {
                 do {
-                    let series = try JSONDecoder().decode(SeriesResults.self, from: data)
+                    let cards = try JSONDecoder().decode(PokemonCardResults.self, from: data)
                     
-                    completionHandler(series)
+                    completionHandler(cards)
                 } catch {
                     print("Error decoding series: \(error)")
                 }
@@ -87,4 +91,13 @@ class APIManager {
         }
         .resume()
     }
+    func checkPage() -> Bool {
+        
+        return false
+    }
 }
+
+//https://api.pokemontcg.io/v2/cards?page=1&q=set.id:sv4
+//https://api.pokemontcg.io/v2/sets?pageSize=250
+//
+//https://api.pokemontcg.io/v2/cards?page=2&q=set.id:sv4

@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23E224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CollectedCards" representedClassName=".CollectedCards" syncable="YES" codeGenerationType="class">
-        <attribute name="cards" optional="YES" attributeType="String"/>
+    <entity name="Card" representedClassName="Card" syncable="YES" codeGenerationType="class">
+        <attribute name="holo" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="imageLarge" optional="YES" attributeType="String"/>
+        <attribute name="imageSmall" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="nationalPokedexNumbers" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="normal" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="priceUpdateAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="rarity" optional="YES" attributeType="String"/>
+        <attribute name="reverse" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="supertype" optional="YES" attributeType="String"/>
+        <attribute name="tcgURL" optional="YES" attributeType="URI"/>
         <relationship name="folder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Folder" inverseName="card" inverseEntity="Folder"/>
-        <relationship name="pokemon" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PokemonInfo" inverseName="collectedCards" inverseEntity="PokemonInfo"/>
+        <relationship name="pokemonInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PokemonInfo" inverseName="card" inverseEntity="PokemonInfo"/>
+        <relationship name="set" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sets" inverseName="card" inverseEntity="Sets"/>
     </entity>
     <entity name="Folder" representedClassName="Folder" syncable="YES" codeGenerationType="class">
-        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CollectedCards" inverseName="folder" inverseEntity="CollectedCards"/>
+        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="folder" inverseEntity="Card"/>
     </entity>
     <entity name="PokemonInfo" representedClassName=".PokemonInfo" syncable="YES" codeGenerationType="class">
         <attribute name="caught" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -14,7 +28,7 @@
         <attribute name="image" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="type" attributeType="String"/>
-        <relationship name="collectedCards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CollectedCards" inverseName="pokemon" inverseEntity="CollectedCards"/>
+        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="pokemonInfo" inverseEntity="Card"/>
         <relationship name="region" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="pokemon" inverseEntity="Region"/>
     </entity>
     <entity name="Region" representedClassName=".Region" syncable="YES" codeGenerationType="class">
@@ -29,5 +43,6 @@
         <attribute name="series" optional="YES" attributeType="String"/>
         <attribute name="symbol" optional="YES" attributeType="String"/>
         <attribute name="totalCards" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="set" inverseEntity="Card"/>
     </entity>
 </model>

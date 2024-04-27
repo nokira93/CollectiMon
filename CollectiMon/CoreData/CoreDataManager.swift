@@ -147,4 +147,18 @@ class CoreDataManager {
             print("Detele all data in error : \(error) \(error.userInfo)")
         }
     }
+    
+//    func checkIfHaveCards(id: String) -> Bool {
+//        do {
+//            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Sets")
+//            let sets = try managedContext.fetch(fetchRequest)
+//            if let set = sets.contains(where: { test in
+//               
+//            })
+//
+//            return
+//         } catch {
+//             return true
+//         }
+//    }
 }
