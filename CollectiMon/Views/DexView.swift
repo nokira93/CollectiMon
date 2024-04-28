@@ -11,9 +11,9 @@ struct DexView: View {
     var body: some View {
         VStack(){
             Text("xD")
-//                .onTapGesture {
-//                    CoreDataManager.shared.saveContext()
-//                }
+                .onTapGesture {
+                    CoreDataManager.shared.saveContext()
+                }
 //            Button(action: test) {
 //                Label("Add Folder", systemImage: "folder.badge.plus")
 //            }

@@ -17,6 +17,7 @@ struct PokemonSets: Codable {
     let printedTotal: Int
     let total: Int
     let name: String
+    let id: String
     let series: String
     let ptcgoCode: String
     let images: PokemonSetsImages

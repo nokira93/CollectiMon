@@ -15,12 +15,12 @@
         <attribute name="reverse" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="supertype" optional="YES" attributeType="String"/>
         <attribute name="tcgURL" optional="YES" attributeType="URI"/>
-        <relationship name="folder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Folder" inverseName="card" inverseEntity="Folder"/>
-        <relationship name="pokemonInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PokemonInfo" inverseName="card" inverseEntity="PokemonInfo"/>
-        <relationship name="set" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sets" inverseName="card" inverseEntity="Sets"/>
+        <relationship name="folder" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Folder" inverseName="card" inverseEntity="Folder"/>
+        <relationship name="pokemonInfo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PokemonInfo" inverseName="card" inverseEntity="PokemonInfo"/>
+        <relationship name="set" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sets" inverseName="card" inverseEntity="Sets"/>
     </entity>
     <entity name="Folder" representedClassName="Folder" syncable="YES" codeGenerationType="class">
-        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="folder" inverseEntity="Card"/>
+        <relationship name="card" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="folder" inverseEntity="Card"/>
     </entity>
     <entity name="PokemonInfo" representedClassName=".PokemonInfo" syncable="YES" codeGenerationType="class">
         <attribute name="caught" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -28,8 +28,8 @@
         <attribute name="image" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="type" attributeType="String"/>
-        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="pokemonInfo" inverseEntity="Card"/>
-        <relationship name="region" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="pokemon" inverseEntity="Region"/>
+        <relationship name="card" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="pokemonInfo" inverseEntity="Card"/>
+        <relationship name="region" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Region" inverseName="pokemon" inverseEntity="Region"/>
     </entity>
     <entity name="Region" representedClassName=".Region" syncable="YES" codeGenerationType="class">
         <attribute name="regionName" attributeType="String"/>
@@ -41,8 +41,9 @@
         <attribute name="logo" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="series" optional="YES" attributeType="String"/>
+        <attribute name="setID" optional="YES" attributeType="String"/>
         <attribute name="symbol" optional="YES" attributeType="String"/>
         <attribute name="totalCards" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="set" inverseEntity="Card"/>
+        <relationship name="card" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="set" inverseEntity="Card"/>
     </entity>
 </model>

@@ -11,8 +11,10 @@ class SetsDetailViewModel: ObservableObject {
     
     let setID: String
     
-    init(setID: String){
+    init(setID: String, test: Sets){
+        print("Test setID: \(test)")
         self.setID = setID
+//        self.fetchCards()
     }
     
     
@@ -23,6 +25,7 @@ class SetsDetailViewModel: ObservableObject {
     }
     
     func fetchCards(){
-        
+//        CoreDataManager.shared.getCards(setID: "sv3")
+//        CoreDataManager.shared.getCards(setID: setID)
     }
 }

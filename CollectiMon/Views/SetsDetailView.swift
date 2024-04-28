@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct SetsDetailView: View {
-    @StateObject var vm: LoadingViewModel
-
+    @StateObject var vm: SetsDetailViewModel
+    
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Card.nationalPokedexNumbers, ascending: true)])
+    var card: FetchedResults<Card>
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Test \(card.count)")
     }
 }
 
-#Preview {
-    SetsDetailView()
-}
+//#Preview {
+//    SetsDetailView(vm: <#LoadingViewModel#>)
+//}

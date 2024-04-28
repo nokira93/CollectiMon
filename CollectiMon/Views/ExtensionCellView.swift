@@ -47,5 +47,5 @@ struct ExtensionCellView: View {
 }
 
 #Preview {
-    ExtensionCellView(setData: PokemonSets(printedTotal: 200, total: 250, name: "Temporarl Forces", series: "Scarlet & Violet", ptcgoCode: "SVI", images: PokemonSetsImages(symbol: "https://images.pokemontcg.io/sv1/symbol.png", logo: "https://images.pokemontcg.io/sv1/logo.png")))
+    ExtensionCellView(setData: PokemonSets(printedTotal: 200, total: 250, name: "Temporarl Forces", id: "", series: "Scarlet & Violet", ptcgoCode: "SVI", images: PokemonSetsImages(symbol: "https://images.pokemontcg.io/sv1/symbol.png", logo: "https://images.pokemontcg.io/sv1/logo.png")))
 }

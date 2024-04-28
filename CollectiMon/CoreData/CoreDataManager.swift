@@ -68,6 +68,39 @@ class CoreDataManager {
         }
     }
     
+    func getCards(setID: String)  {
+        APIManager.shared.fetchCards(setName: setID) { arr in
+//            self.apiGroup.enter()
+            let setExtension = self.getExtension(setId: setID)
+            arr.data.forEach { fetchedCard in
+                
+                let card = self.createCardsModel()
+                
+                card.id = fetchedCard.id
+//                card.holo
+                card.imageLarge = fetchedCard.images.large
+                card.imageSmall = fetchedCard.images.small
+                card.name = fetchedCard.name
+                card.nationalPokedexNumbers = Int16(fetchedCard.nationalPokedexNumbers)
+//                card.normal
+                card.number = Int16(fetchedCard.number)
+//                card.price = fetchedCard.tcgplayer.prices.holofoil
+//                card.priceUpdateAt = fetchedCard.tcgplayer.updatedAt
+                card.rarity = fetchedCard.rarity
+//                card.reverse
+                card.supertype = "Pokemon"
+                card.tcgURL = URL(string: fetchedCard.tcgplayer.url)
+                
+                if let setEx = setExtension {
+                    setEx.addToCard(card)
+                }
+                if let pokemon = self.getPokemon(number: fetchedCard.nationalPokedexNumbers) {
+                    pokemon.addToCard(card)
+                }
+            }
+        }
+    }
+    
     func getSeries()  {
         APIManager.shared.fetchSeries() { arr in
 //            self.apiGroup.enter()
@@ -80,6 +113,7 @@ class CoreDataManager {
                 set.name = series.name
                 set.series = series.series
                 set.symbol = series.images.symbol
+                set.setID = series.id
                 print("Series: \(series.name) || \(series.total)")
 //                self.apiGroup.leave()
             }
@@ -88,6 +122,10 @@ class CoreDataManager {
     
     func createBasicPokemotnInfoModel() -> PokemonInfo {
         PokemonInfo(context: storeContainer.viewContext)
+    }
+    
+    func createCardsModel() -> Card {
+        Card(context: storeContainer.viewContext)
     }
     
     func createSeriesModel() -> Sets {
@@ -148,17 +186,49 @@ class CoreDataManager {
         }
     }
     
+    
+    func getExtension(setId: String) -> Sets? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Sets")
+        fetchRequest.predicate = NSPredicate(format: "code == %@", setId)
+
+        do {
+            let sets = try managedContext.fetch(fetchRequest)
+            //do poprawy
+            print("Udalo sie pobrac set")
+            return sets.first as? Sets
+        } catch let error as NSError {
+            print("Nie udało się pobrać. \(error), \(error.userInfo)")
+            return nil
+        }
+    }
+    
+    func getPokemon(number: Int) -> PokemonInfo? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PokemonInfo")
+        fetchRequest.predicate = NSPredicate(format: "id == %@", Int16(number))
+
+        do {
+            let pokemon = try managedContext.fetch(fetchRequest)
+            //do poprawy
+            print("Udalo sie pobrac pokemona")
+            return pokemon.first as? PokemonInfo
+        } catch let error as NSError {
+            print("Nie udało się pobrać pokemona. \(error), \(error.userInfo)")
+            return nil
+        }
+    }
+    
 //    func checkIfHaveCards(id: String) -> Bool {
-//        do {
-//            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Sets")
-//            let sets = try managedContext.fetch(fetchRequest)
-//            if let set = sets.contains(where: { test in
-//               
-//            })
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Sets")
+//        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
 //
-//            return
-//         } catch {
-//             return true
-//         }
+//        do {
+//            let set = try managedContext.fetch(fetchRequest)
+//            
+//            print("Udalo sie sprawdzic i sa juz karty")
+//            return pokemon.first as? PokemonInfo
+//        } catch let error as NSError {
+//            print("Nie udało się pobrać pokemona. \(error), \(error.userInfo)")
+//            return nil
+//        }
 //    }
 }
