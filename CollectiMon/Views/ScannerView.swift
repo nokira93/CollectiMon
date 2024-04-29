@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ScannerView: View {
-    let vm: ScannerViewModel
-
+    @StateObject var vm: ScannerViewModel
 
     var body: some View {
 //        NavigationView {

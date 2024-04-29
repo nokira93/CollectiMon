@@ -23,15 +23,16 @@ struct PokMiniatureView: View {
                         .padding(.trailing, 10)
                         .padding(.top, 10)
                 }
-                if pokemon.caught {
+//                if pokemon.caught {
                     AsyncImage(url: URL(string: pokemon.image))
                         .scaledToFit()
+                        .saturation(pokemon.caught ? 1 : 0.0)
                     
-                } else {
-                    AsyncImage(url: URL(string: pokemon.image))
-                        .scaledToFit()
-                        .saturation(0.0)
-                }
+//                } else {
+//                    AsyncImage(url: URL(string: pokemon.image))
+//                        .scaledToFit()
+//                        .saturation(0.0)
+//                }
                 
                 Text(pokemon.name.capitalizedFirstLetter.replacingMWithGenderSymbol())
                     .font(.title3)

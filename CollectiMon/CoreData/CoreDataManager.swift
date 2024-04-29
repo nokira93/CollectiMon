@@ -68,6 +68,12 @@ class CoreDataManager {
         }
     }
     
+    func makeNewFolder(name: String) {
+        let folder = createFolderModel()
+        folder.name = name
+        saveContext()
+    }
+    
     func getCards(setID: String)  {
         APIManager.shared.fetchCards(setName: setID) { arr in
 //            self.apiGroup.enter()
@@ -122,6 +128,10 @@ class CoreDataManager {
     
     func createBasicPokemotnInfoModel() -> PokemonInfo {
         PokemonInfo(context: storeContainer.viewContext)
+    }
+    
+    func createFolderModel() -> Folder {
+        Folder(context: storeContainer.viewContext)
     }
     
     func createCardsModel() -> Card {

@@ -17,7 +17,7 @@ struct ContentView: View {
             LoadingView(vm: LoadingViewModel())
         } else {
             TabView{
-                RegionPokemonsView(vm: RegionPokemonsViewModel(regionName: "Kanto", totalNumber: 151, pokemonCaught: 1))
+                RegionPokemonsView(vm: RegionPokemonsViewModel(regionName: "Kanto", totalNumber: 151, pokemonCaught: 0))
                     .environment(\.managedObjectContext, CoreDataManager.shared.managedContext)
                     .tabItem {
                         Label("Dex", systemImage: "text.book.closed")
@@ -27,7 +27,8 @@ struct ContentView: View {
                     .tabItem {
                         Label("Expensions", systemImage: "folder")
                     }
-                DexView()
+                FoldersView(vm: FoldersViewModel())
+                    .environment(\.managedObjectContext, CoreDataManager.shared.managedContext)
                     .tabItem {
                         Label("Folders", systemImage: "bookmark.fill")
                     }
