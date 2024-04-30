@@ -19,20 +19,12 @@ struct FolderIconView: View {
                 Text(name)
                     .bold()
                     .font(.title)
-                HStack(){
-                    Text("\(progress) of \(total)")
-                        .font(.title2)
-                    ZStack() {
-                        RoundedRectangle(cornerRadius: 5)
-                            .foregroundColor(.gray)
-                        
-                        RoundedRectangle(cornerRadius: 5)
-                            .foregroundColor(.blue)
-                    }
+                
+                    ProgressView("\(progress) of \(total)", value: Double(progress), total: Double(total))
                     .frame(height: 20)
                     .padding(.horizontal, 10)
 
-                }
+//                }
             }
         }
     }
