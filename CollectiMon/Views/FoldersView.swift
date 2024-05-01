@@ -24,11 +24,11 @@ struct FoldersView: View {
                     vm.showNameFolder = true
                 }
                 .buttonStyle(.borderedProminent)
-                
-                NavigationLink(destination: FolderView(vm: FolderViewModel())) {
-                    FolderIconView(progress: 1, total: 10, name: "Test")
+                ForEach(folder) { fold in
+                    NavigationLink(destination: FolderView(vm: FolderViewModel())) {
+                        FolderIconView(progress: Int(fold.numOfCards ?? 0), total: Int(fold.totalCards ?? 1), name: fold.name ?? "" )
+                    }
                 }
-                
                 Spacer()
 //                Text("folder items : \(folder.count)")
             }
