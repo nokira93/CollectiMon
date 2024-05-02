@@ -17,23 +17,26 @@ struct FoldersView: View {
 
     
     var body: some View {
-        NavigationView {
-            VStack(){
-                
-                Button("Add folder") {
-                    vm.showNameFolder = true
-                }
-                .buttonStyle(.borderedProminent)
-                ForEach(folder) { fold in
-                    NavigationLink(destination: FolderView(vm: FolderViewModel())) {
-                        FolderIconView(progress: Int(fold.numOfCards ?? 0), total: Int(fold.totalCards ?? 1), name: fold.name ?? "" )
+//        ScrollView(){
+            NavigationView {
+                VStack(){
+                    
+                    Button("Add folder") {
+                        vm.showNameFolder = true
                     }
+                    .buttonStyle(.borderedProminent)
+                    ForEach(folder) { fold in
+                        NavigationLink(destination: FolderView(vm: FolderViewModel())) {
+                            FolderIconView(progress: Int(fold.numOfCards ?? 0), total: Int(fold.totalCards ?? 1), name: fold.name ?? "" )
+                                            .frame(height: 75)
+                                            .padding(.vertical, 10)
+                        }
+                    }
+                    Spacer()
+                    //                Text("folder items : \(folder.count)")
                 }
-                Spacer()
-//                Text("folder items : \(folder.count)")
             }
-        }
-        
+//        }
         .alert("Folder name", isPresented: $vm.showNameFolder) {
             TextField("Enter folder name", text: $vm.name)
             Button("OK", action: vm.addFolder)

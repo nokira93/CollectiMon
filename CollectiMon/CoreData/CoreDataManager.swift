@@ -75,11 +75,12 @@ class CoreDataManager {
     }
     
     func getCards(setID: String)  {
+        
         APIManager.shared.fetchCards(setName: setID) { arr in
 //            self.apiGroup.enter()
             let setExtension = self.getExtension(setId: setID)
             arr.data.forEach { fetchedCard in
-                
+                print("Test : \(arr.count)")
                 let card = self.createCardsModel()
                 
                 card.id = fetchedCard.id

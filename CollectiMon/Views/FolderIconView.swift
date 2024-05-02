@@ -15,6 +15,9 @@ struct FolderIconView: View {
     var body: some View {
         HStack() {
             Image("mewTwoIcon")
+                .resizable()
+                .scaledToFit()
+//                .frame(height: 200)
             VStack(alignment: .leading) {
                 Text(name)
                     .bold()
@@ -23,10 +26,13 @@ struct FolderIconView: View {
                     ProgressView("\(progress) of \(total)", value: Double(progress), total: Double(total))
                     .frame(height: 20)
                     .padding(.horizontal, 10)
+                
 
 //                }
             }
+            Spacer()
         }
+        .padding(.horizontal, 20)
     }
 }
 
