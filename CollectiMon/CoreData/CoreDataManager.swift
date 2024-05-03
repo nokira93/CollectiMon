@@ -80,7 +80,7 @@ class CoreDataManager {
 //            self.apiGroup.enter()
             let setExtension = self.getExtension(setId: setID)
             arr.data.forEach { fetchedCard in
-                print("Test : \(arr.count)")
+//                print("Test : \(arr.count)")
                 let card = self.createCardsModel()
                 
                 card.id = fetchedCard.id
@@ -88,7 +88,7 @@ class CoreDataManager {
                 card.imageLarge = fetchedCard.images.large
                 card.imageSmall = fetchedCard.images.small
                 card.name = fetchedCard.name
-                card.nationalPokedexNumbers = Int16(fetchedCard.nationalPokedexNumbers)
+                card.nationalPokedexNumbers = Int16(fetchedCard.nationalPokedexNumbers.first ?? 1)
 //                card.normal
                 card.number = Int16(fetchedCard.number)
 //                card.price = fetchedCard.tcgplayer.prices.holofoil
@@ -101,7 +101,7 @@ class CoreDataManager {
                 if let setEx = setExtension {
                     setEx.addToCard(card)
                 }
-                if let pokemon = self.getPokemon(number: fetchedCard.nationalPokedexNumbers) {
+                if let pokemon = self.getPokemon(number: fetchedCard.nationalPokedexNumbers.first ?? 1) {
                     pokemon.addToCard(card)
                 }
             }

@@ -20,7 +20,7 @@ struct PokemonCardModel: Codable {
     let number: Int
     //dodac enuma
     let rarity: String
-    let nationalPokedexNumbers: Int
+    let nationalPokedexNumbers: [Int]
     let images: CardImagesModel
     let id: String
     //dodac enuma

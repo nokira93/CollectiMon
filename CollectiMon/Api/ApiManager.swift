@@ -71,7 +71,7 @@ class APIManager {
     func fetchCards(setName: String, completionHandler: @escaping (PokemonCardResults) -> Void) {
         
         var page = 1
-        var fetchURL =  "https://api.pokemontcg.io/v2/cards?page=\(page)&q=set.id:sv3"
+        var fetchURL = "https://api.pokemontcg.io/v2/cards?page=\(page)&q=set.id:sv3"
 //        var fetchURL =  "https://api.pokemontcg.io/v2/cards?page=\(page)&q=set.id:\(setName)"
         
         guard let url = URL(string: fetchURL) else { return }
