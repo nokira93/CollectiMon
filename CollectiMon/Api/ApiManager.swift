@@ -71,7 +71,7 @@ class APIManager {
     func fetchCards(setName: String, completionHandler: @escaping (PokemonCardResults) -> Void) {
         
         var page = 1
-        var fetchURL = "https://api.pokemontcg.io/v2/cards?page=\(page)&q=set.id:sv3"
+        var fetchURL = "https://api.pokemontcg.io/v2/cards?pageSize=50&q=set.id:sv3"
 //        var fetchURL =  "https://api.pokemontcg.io/v2/cards?page=\(page)&q=set.id:\(setName)"
         
         guard let url = URL(string: fetchURL) else { return }
@@ -82,8 +82,9 @@ class APIManager {
             }
             if let data = data {
                 do {
-                    let cards = try JSONDecoder().decode(PokemonCardResults.self, from: data)
                     print("Test fetchCard1: \(fetchURL)")
+                    let cards = try JSONDecoder().decode(PokemonCardResults.self, from: data)
+//                    print("Test fetchCard1: \(fetchURL)")
                     completionHandler(cards)
                 } catch {
                     print("Error decoding series: \(error)")

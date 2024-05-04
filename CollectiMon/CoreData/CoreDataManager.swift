@@ -90,19 +90,23 @@ class CoreDataManager {
                 card.name = fetchedCard.name
                 card.nationalPokedexNumbers = Int16(fetchedCard.nationalPokedexNumbers.first ?? 1)
 //                card.normal
-                card.number = Int16(fetchedCard.number)
+                card.number = Int16(fetchedCard.number) ?? 1
 //                card.price = fetchedCard.tcgplayer.prices.holofoil
 //                card.priceUpdateAt = fetchedCard.tcgplayer.updatedAt
                 card.rarity = fetchedCard.rarity
 //                card.reverse
                 card.supertype = "Pokemon"
-                card.tcgURL = URL(string: fetchedCard.tcgplayer.url)
+                card.tcgURL = fetchedCard.tcgplayer.url
+//                URL(string: fetchedCard.tcgplayer.url)
                 
                 if let setEx = setExtension {
                     setEx.addToCard(card)
                 }
-                if let pokemon = self.getPokemon(number: fetchedCard.nationalPokedexNumbers.first ?? 1) {
+                if let pokemon = self.getPokemon(name: fetchedCard.name)
+//                                                    fetchedCard.nationalPokedexNumbers.first ?? 1)
+                {
                     pokemon.addToCard(card)
+                    print("Test pokemon: \(pokemon.id) || \(pokemon.name)")
                 }
             }
         }
@@ -213,9 +217,9 @@ class CoreDataManager {
         }
     }
     
-    func getPokemon(number: Int) -> PokemonInfo? {
+    func getPokemon(name: String) -> PokemonInfo? {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PokemonInfo")
-        fetchRequest.predicate = NSPredicate(format: "id == %@", Int16(number))
+        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
 
         do {
             let pokemon = try managedContext.fetch(fetchRequest)

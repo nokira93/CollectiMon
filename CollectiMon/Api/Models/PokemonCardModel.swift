@@ -17,13 +17,13 @@ struct PokemonCardResults: Codable {
 
 struct PokemonCardModel: Codable {
     let name: String
-    let number: Int
+    let number: String
     //dodac enuma
     let rarity: String
     let nationalPokedexNumbers: [Int]
     let images: CardImagesModel
     let id: String
-    //dodac enuma
+//    dodac enuma
     let supertype: String
     let tcgplayer: TcgplayerModel
 }
@@ -34,13 +34,13 @@ struct CardImagesModel: Codable {
 }
 
 struct TcgplayerModel: Codable {
-    let url: String
+    let url: URL
     let updatedAt: String
-    let prices: PricesModel
+//    let prices: PricesModel
 }
 
 struct PricesModel: Codable {
-    let reverseHolofoil: String?
-    let normal: String?
-    let holofoil: String?
+    let reverseHolofoil: Int?
+    let normal: Int?
+    let holofoil: Int?
 }
