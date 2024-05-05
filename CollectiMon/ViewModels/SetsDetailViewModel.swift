@@ -25,7 +25,8 @@ class SetsDetailViewModel: ObservableObject {
     }
     
     func fetchCards(){
+        // trzebda dodac sprawdzenie i przekazywanie poprawnego id 
         CoreDataManager.shared.getCards(setID: "sv3")
-        CoreDataManager.shared.getCards(setID: setID)
+//        CoreDataManager.shared.getCards(setID: setID)
     }
 }
