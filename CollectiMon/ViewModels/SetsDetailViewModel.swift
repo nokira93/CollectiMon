@@ -9,24 +9,24 @@ import Foundation
 
 class SetsDetailViewModel: ObservableObject {
     
-    let setID: String
+    let setID: String = "sv3"
     
     init(setID: String, test: Sets){
         print("Test setID: \(test)")
-        self.setID = setID
-        self.fetchCards()
+//        self.setID = setID
+        self.checkIfHaveCards()
     }
     
     
     func checkIfHaveCards() {
-//        if !CoreDataManager.shared.checkIfHaveCards(id: setID) {
-//            fetchCards()
-//        }
+        if !CoreDataManager.shared.checkIfHaveCards(id: setID) {
+            fetchCards()
+        }
     }
     
     func fetchCards(){
         // trzebda dodac sprawdzenie i przekazywanie poprawnego id 
-        CoreDataManager.shared.getCards(setID: "sv3")
-//        CoreDataManager.shared.getCards(setID: setID)
+//        CoreDataManager.shared.getCards(setID: "sv3")
+        CoreDataManager.shared.getCards(setID: setID)
     }
 }

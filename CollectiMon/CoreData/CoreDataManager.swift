@@ -232,18 +232,22 @@ class CoreDataManager {
         }
     }
     
-//    func checkIfHaveCards(id: String) -> Bool {
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Sets")
-//        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
-//
-//        do {
-//            let set = try managedContext.fetch(fetchRequest)
-//            
-//            print("Udalo sie sprawdzic i sa juz karty")
-//            return pokemon.first as? PokemonInfo
-//        } catch let error as NSError {
-//            print("Nie udało się pobrać pokemona. \(error), \(error.userInfo)")
-//            return nil
-//        }
-//    }
+    func checkIfHaveCards(id: String) -> Bool {
+        print("Sprawdzenie: \(id)")
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Sets")
+        fetchRequest.predicate = NSPredicate(format: "setID == %@", id)
+
+        do {
+            let set = try managedContext.fetch(fetchRequest)
+            
+            print("Udalo sie sprawdzic i sa juz karty")
+            print("Set sprawdzenie \(set.isEmpty)")
+            
+            return !set.isEmpty
+        } catch let error as NSError {
+            print("Nie udało się pobrać pokemona. \(error), \(error.userInfo)")
+            return false
+        }
+    }
 }
