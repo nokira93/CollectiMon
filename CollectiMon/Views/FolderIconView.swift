@@ -23,7 +23,7 @@ struct FolderIconView: View {
                     .bold()
                     .font(.title)
                 
-                    ProgressView("\(progress) of \(total)", value: Double(progress), total: Double(total))
+                    ProgressView("\(progress) of \(total)", value: Double(progress), total: Double(10))
                     .frame(height: 20)
                     .padding(.horizontal, 10)
                 

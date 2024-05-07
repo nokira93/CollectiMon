@@ -62,7 +62,7 @@ extension CodeScannerView {
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
             label.numberOfLines = 0
-            label.text = "You're running in the simulator, which means the camera isn't available. Tap anywhere to send back some simulated data."
+            label.text = "Nie dziala na symulatorze, potrzebuje dostepu do kamery"
             label.textAlignment = .center
 
             let button = UIButton()

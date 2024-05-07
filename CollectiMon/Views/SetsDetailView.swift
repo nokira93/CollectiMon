@@ -11,10 +11,28 @@ struct SetsDetailView: View {
     @StateObject var vm: SetsDetailViewModel
     
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Card.nationalPokedexNumbers, ascending: true)])
-    var card: FetchedResults<Card>
+    var cards: FetchedResults<Card>
     
     var body: some View {
-        Text("Test \(card.count)")
+        ScrollView {
+            LazyVGrid(columns: vm.colums, spacing: 20) {
+                ForEach(cards) { card in
+                    
+                    AsyncImage(
+                        url: URL(string: card.imageSmall ?? ""),
+                        content: { image in
+                            image.resizable()
+                                .scaledToFit()
+//                                .frame(maxWidth: 40, maxHeight: 40)
+                        },
+                        placeholder: {
+                            ProgressView()
+                        }
+                        )
+                    
+                }
+            }.padding(.horizontal, 5)
+        }
     }
 }
 

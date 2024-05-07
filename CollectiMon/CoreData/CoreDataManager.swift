@@ -98,7 +98,7 @@ class CoreDataManager {
                 card.supertype = "Pokemon"
                 card.tcgURL = fetchedCard.tcgplayer.url
 //                URL(string: fetchedCard.tcgplayer.url)
-                
+                print("Pokemon card \(card.nationalPokedexNumbers)")
                 if let setEx = setExtension {
                     setEx.addToCard(card)
                 }

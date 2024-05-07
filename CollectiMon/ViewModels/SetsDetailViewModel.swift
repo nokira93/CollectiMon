@@ -6,10 +6,17 @@
 //
 
 import Foundation
+import SwiftUI
 
 class SetsDetailViewModel: ObservableObject {
     
     let setID: String = "sv3"
+    
+    let colums = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
     
     init(setID: String, test: Sets){
         print("Test setID: \(test)")
@@ -19,9 +26,9 @@ class SetsDetailViewModel: ObservableObject {
     
     
     func checkIfHaveCards() {
-        if !CoreDataManager.shared.checkIfHaveCards(id: setID) {
+//        if !CoreDataManager.shared.checkIfHaveCards(id: setID) {
             fetchCards()
-        }
+//        }
     }
     
     func fetchCards(){
