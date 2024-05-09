@@ -27,3 +27,5 @@ https://github.com/nokira93/CollectiMon/assets/60795447/37c91d03-631b-4ba4-a919-
 - Ability to add cards to folders
 - Possibility of sorting, e.g. by a specific generation
 - View of individual cards
+- Allow to download files as csv
+- add login and saving all data in firebase
