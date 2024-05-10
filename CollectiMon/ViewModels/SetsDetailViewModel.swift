@@ -10,7 +10,8 @@ import SwiftUI
 
 class SetsDetailViewModel: ObservableObject {
     
-    let setID: String = "sv3"
+    let setID: String 
+//    let setID: String = "sv3"
     
     let colums = [
         GridItem(.flexible()),
@@ -20,15 +21,15 @@ class SetsDetailViewModel: ObservableObject {
     
     init(setID: String, test: Sets){
         print("Test setID: \(test)")
-//        self.setID = setID
+        self.setID = setID
         self.checkIfHaveCards()
     }
     
     
     func checkIfHaveCards() {
-//        if !CoreDataManager.shared.checkIfHaveCards(id: setID) {
+        if !CoreDataManager.shared.checkIfHaveCards(id: setID) {
             fetchCards()
-//        }
+        }
     }
     
     func fetchCards(){
