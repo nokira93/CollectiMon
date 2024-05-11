@@ -19,8 +19,8 @@ class SetsDetailViewModel: ObservableObject {
         GridItem(.flexible())
     ]
     
-    init(setID: String, test: Sets){
-        print("Test setID: \(test)")
+    init(setID: String){
+        print("Test setID: \(setID)")
         self.setID = setID
         self.checkIfHaveCards()
     }

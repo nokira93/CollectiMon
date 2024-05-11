@@ -22,7 +22,7 @@ struct ExtensionView: View {
                     .bold()
                 
                 ForEach(series) { set in
-                    NavigationLink(destination: SetsDetailView(vm: SetsDetailViewModel(setID: set.code ?? "", test: set))) {
+                    NavigationLink(destination: SetsDetailView(vm: SetsDetailViewModel(setID: set.setID ?? ""))) {
                         ExtensionCellView(setData: PokemonSets(printedTotal: Int(set.basicCards), total: Int(set.totalCards), name: series.first?.name ?? "", id: set.setID ?? "", series: set.series ?? "", ptcgoCode: set.code ?? "", images: PokemonSetsImages(symbol: set.symbol ?? "", logo: set.logo ?? "")))
                             .padding(.horizontal, 10)
                             .padding(.vertical, 5)
